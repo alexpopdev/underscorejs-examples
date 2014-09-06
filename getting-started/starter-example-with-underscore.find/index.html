@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Getting started - starter example with Underscore.find</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js"></script>
+</head>
+
+<body>
+  <div>Example output:</div>
+  <div id="output"></div>
+  <script>
+  var bicycles = [{
+      name: "A fast bike",
+      type: "Road Bike"
+    }, {
+      name: "An even faster bike",
+      type: "Road Bike"
+    }, {
+      name: "A springy bike",
+      type: "Mountain Bike"
+    }, {
+      name: "A springier bike",
+      type: "Mountain Bike"
+    }, {
+      name: "A all-terain bike",
+      type: "Mountain Bike"
+    }, {
+      name: "A classy bike",
+      type: "Urban Bike"
+    }, {
+      name: "A modern bike",
+      type: "Urban Bike"
+    }, {
+      name: "A blue bike",
+      type: "Children Bike"
+    }, {
+      name: "A pink bike",
+      type: "Children Bike"
+    }, {
+      name: "A noisy bike",
+      type: "Children Bike"
+    }, {
+      name: "A clown bike",
+      type: "Children Bike"
+    }];
+
+    var getBicyclesCountPerType = function() {
+      var bicyclesCountPerType = [];
+      bicycles.forEach(function(bicycle) {
+        var currentTypeCount = _.find(bicyclesCountPerType, function(typeCount){
+          return typeCount.type === bicycle.type
+        });
+
+        if (currentTypeCount) {
+          currentTypeCount.count += 1;
+        }
+        else
+        {
+          bicyclesCountPerType.push({
+            type: bicycle.type,
+            count: 1
+          });
+        }
+      });
+
+      return bicyclesCountPerType;
+    };
+
+    $(document).ready(function() {
+      $("#output").html("There are " + bicycles.length + " bycicles:");
+      var results = getBicyclesCountPerType();
+      results.forEach(function(typeCount) {
+        var existingContent = $("#output").html();
+        var newContent = " - " + typeCount.count + " of type: " + typeCount.type;
+        $("#output").html(existingContent + "<br />" + newContent);
+      });
+    });
+  </script>
+</body>
+
+</html>

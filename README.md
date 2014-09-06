@@ -1,4 +1,7 @@
 underscorejs-book
 =================
 
-The examples for my upcoming book "Learning Underscore.js"
+This repository contains the examples for my upcoming book "Learning Underscore.js".  
+
+
+1.
