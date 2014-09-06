@@ -1,7 +1,25 @@
 underscorejs-book
 =================
 
+##Overview
 This repository contains the examples for my upcoming book "Learning Underscore.js".  
 
+The folders and examples are named in such a way they can be explored outside of the book context.
 
-1.
+##Examples index
+The examples are organised in these sections(they match a specific chapter of the book):
+
+### Getting started (Chapter 1: The building blocks of Underscore.js)
+1. Starter example with ECMAScript 5 - [code](getting-started/starter-example-with-ECMAScript5), [preview](http://plnkr.co/edit/EP3H268pw1wQbu4cp9iU?p=preview)
+2. Started example with Underscore.find - [code](getting-started/starter-example-with-underscore.find), [preview](http://plnkr.co/edit/O3vUZspyamLOnoMl4aWK?p=preview)
+3. Starter example with Underscore.countBy - [code](getting-started/starter-example-with-underscore.countBy), [preview](http://plnkr.co/edit/H7UjDsgfxhuUPPC1UDq6?p=preview)
+
+### Collections (Chapter 2: Using Underscore.js with collections)
+
+### Arrays, functions and objects (Chapter3: Using Underscore.js with arrays, functions and objects)
+
+### OOP, FP and an utility sample (Chapter 4: Programming paradigms with Underscore.js)
+
+### Browser, server side and database examples (Chapter 5: Underscore.js in the browser, on the server and with the database)
+
+### Advanced topics (Chapter 6: Advanced Underscore.js topics)
