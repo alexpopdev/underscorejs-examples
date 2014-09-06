@@ -13,7 +13,7 @@ The examples are organised in these sections(they match a specific chapter of th
 1. Starter example with ECMAScript 5 - [code](getting-started/starter-example-with-ECMAScript5), [preview](http://plnkr.co/edit/EP3H268pw1wQbu4cp9iU?p=preview)
 2. Started example with Underscore.find - [code](getting-started/starter-example-with-underscore.find), [preview](http://plnkr.co/edit/O3vUZspyamLOnoMl4aWK?p=preview)
 3. Starter example with Underscore.countBy - [code](getting-started/starter-example-with-underscore.countBy), [preview](http://plnkr.co/edit/H7UjDsgfxhuUPPC1UDq6?p=preview)
-4. Starter example with local dependencies - [code](getting-started/starter-example-with-local-dependencies)
+4. Starter example with local dependencies via Bower - [code](getting-started/starter-example-with-local-dependencies)
 5. Starter example with Jasmine -
 6. ???
 
