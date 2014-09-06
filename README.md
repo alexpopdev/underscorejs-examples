@@ -1,4 +1,4 @@
-underscorejs-book
+underscorejs-examples
 =================
 
 ##Overview
