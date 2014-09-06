@@ -6,6 +6,8 @@ This repository contains the examples for my upcoming book "Learning Underscore.
 
 The folders and examples are named in such a way they can be explored outside of the book context.
 
+If these examples prove useful to the community I intend to create a branch after the book is finished (or even a separate fork) and accept further additions or even significant changes unrelated to the content of the book.
+
 ##Examples index
 The examples are organised in these sections(they match a specific chapter of the book):
 
