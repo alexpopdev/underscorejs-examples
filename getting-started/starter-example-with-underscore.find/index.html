@@ -50,7 +50,7 @@
       var bicyclesCountPerType = [];
       bicycles.forEach(function(bicycle) {
         var currentTypeCount = _.find(bicyclesCountPerType, function(typeCount){
-          return typeCount.type === bicycle.type
+          return typeCount.type === bicycle.type;
         });
 
         if (currentTypeCount) {
