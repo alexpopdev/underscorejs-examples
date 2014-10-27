@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#output").html("There are " + bicycles.length + " bycicles:");
+  $("#output").html("There are " + bicycles.length + " bicycles:");
   var result = _.countBy(bicycles, function(bicycle) {
     return bicycle.type;
   });
