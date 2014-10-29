@@ -43,7 +43,7 @@
         return {
           name: person.name,
           awardAge: person.awardYear - person.birthYear
-        }
+        };
       });
 
       var averageAwardAge = _.reduce(peopleWithAwardAge, function(memo, person) {
