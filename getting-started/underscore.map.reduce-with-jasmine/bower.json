@@ -1,5 +1,5 @@
 {
-  "name": "underscore.map.reduce-with-local-dependencies",
+  "name": "underscore.map.reduce-with-jasmine",
   "main": "index.js",
   "version": "0.0.0",
   "homepage": "https://github.com/popalexandruvasile/underscorejs-examples",
@@ -18,5 +18,8 @@
   "dependencies": {
     "jquery": "1.11.1",
     "underscore": "1.7.0"
+  },
+  "devDependencies": {
+    "jasmine": "2.0.2"
   }
 }
