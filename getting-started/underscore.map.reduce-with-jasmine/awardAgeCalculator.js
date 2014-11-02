@@ -1,6 +1,6 @@
 var awardAgeCalculator = (function() {
   "use strict";
-  
+
   var getPeople = function() {
     return [{
       name: "Herta Muller",
