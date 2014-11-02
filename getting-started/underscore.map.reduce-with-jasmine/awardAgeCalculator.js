@@ -1,7 +1,7 @@
 var awardAgeCalculator = (function() {
   "use strict";
 
-  var getPeople = function() {
+  var innerGetPeople = function() {
     return [{
       name: "Herta Muller",
       birthYear: 1953,
@@ -29,7 +29,7 @@ var awardAgeCalculator = (function() {
     }];
   };
 
-  var getPeopleWithAwardAge = function() {
+  var innerGetPeopleWithAwardAge = function(getPeople) {
     return _.map(getPeople(), function(person) {
       return {
         name: person.name,
@@ -39,9 +39,10 @@ var awardAgeCalculator = (function() {
   };
 
   return {
-    getPeopleWithAwardAge: getPeopleWithAwardAge,
-    getAverageAwardAge: function() {
-      var peopleWithAwardAge = getPeopleWithAwardAge();
+    getPeople: innerGetPeople,
+    getPeopleWithAwardAge: innerGetPeopleWithAwardAge,
+    getAverageAwardAge: function(getPeople) {
+      var peopleWithAwardAge = innerGetPeopleWithAwardAge(getPeople);
       return _.reduce(peopleWithAwardAge, function(memo, person) {
         return memo + person.awardAge;
       }, 0) / peopleWithAwardAge.length;
