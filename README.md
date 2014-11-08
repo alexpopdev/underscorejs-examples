@@ -18,7 +18,7 @@ The examples are organised in these sections (that match a specific chapter of t
 4. Underscore map/reduce example - [code](getting-started/underscore.map.reduce), [preview](http://plnkr.co/edit/TCG7PYLJW2imcDAbzwsv?p=preview)
 5. Underscore map/reduce example with IIFE (immediately invoked function expression) - [code](getting-started/underscore.map.reduce-iife), [preview](http://plnkr.co/edit/icJXL2I1gCgQ7qbhEV4P?p=preview)
 6. Revealing module pattern - [code](getting-started/revealing-module-pattern), [preview](http://plnkr.co/edit/eHa7Ot9vNcuCAYg5vgGQ?p=preview)
-7. Underscore map/reduce example with revealing module pattern - [code](http://plnkr.co/edit/MVLfs688mBhv5kCbqN6g?p=preview), [preview](http://plnkr.co/edit/TCG7PYLJW2imcDAbzwsv?p=preview)
+7. Underscore map/reduce example with revealing module pattern - [code](getting-started/underscore.map.reduce-revealing-module), [preview](http://plnkr.co/edit/MVLfs688mBhv5kCbqN6g?p=preview)
 8. Underscore map/reduce example with local dependencies via Bower - [code](getting-started/underscore.map.reduce-with-local-dependencies)
 9. Underscore map/reduce example with Jasmine tests - [code](getting-started/underscore.map.reduce-with-jasmine)
 
