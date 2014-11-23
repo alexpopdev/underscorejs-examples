@@ -17,8 +17,8 @@ $(document).ready(function() {
 
   $("#output").html("<br />Object properties:");
 
-  _.each(propertiesForDisplay, function(line){
+  _.each(propertiesForDisplay, function(line) {
     var existingContent = $("#output").html();
     $("#output").html(existingContent + "<br />" + line);
-  }, source );
+  }, source);
 });
