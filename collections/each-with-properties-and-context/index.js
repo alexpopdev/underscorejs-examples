@@ -21,5 +21,5 @@ $(document).ready(function() {
     var existingContent = $("#output").html();
     var newContent = "Property: " + key + " of type: " + typeof value + " has value: " + value;
     $("#output").html(existingContent + "<br />" + newContent);
-  }, source );
+  });
 });
