@@ -26,7 +26,7 @@ describe("propertyExtractor", function() {
     });
 
     it("then the 'description' property should not be defined", function() {
-      expect(storableProperties.description).toEqual(undefined);
+      expect(storableProperties.description).toBeUndefined();
     });
   });
 
@@ -56,7 +56,7 @@ describe("propertyExtractor", function() {
     });
 
     it("then the 'description' property should not be defined", function() {
-      expect(storableProperties.description).toEqual(undefined);
+      expect(storableProperties.description).toBeUndefined();
     });
   });
 });
