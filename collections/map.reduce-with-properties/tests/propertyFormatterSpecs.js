@@ -30,4 +30,29 @@ describe("propertyFormatter", function() {
     });
   });
 
+  describe("when calling extractAllPropertiesForDisplay()", function() {
+    var allPropertiesForDisplay;
+
+    beforeEach(function() {
+      var source = {
+        id: 2,
+        name: "Blue lamp",
+        description: null,
+        ui: undefined,
+        price: 10,
+        purchaseDate: new Date(2014, 10, 1),
+        isInUse: true,
+      };
+
+      allPropertiesForDisplay = propertyFormatter.extractAllPropertiesForDisplay(source);
+    });
+
+    it("then the returned string has expected length", function() {
+      expect(allPropertiesForDisplay.length).toBeGreaterThan(0);
+    });
+
+    it("then the 'price' property should be displayed", function() {
+      expect(allPropertiesForDisplay).toMatch("<br/>Property: price of type: number has value: 10<br/>");
+    });
+  });
 });

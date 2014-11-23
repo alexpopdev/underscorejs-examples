@@ -15,10 +15,19 @@ $(document).ready(function() {
 
   var propertiesForDisplay = propertyFormatter.extractPropertiesForDisplay(source);
 
-  $("#output").html("<br />Object properties:");
+  $("#output").html("<h2>Object properties using propertyFormatter.extractPropertiesForDisplay:</h2>");
 
   _.each(propertiesForDisplay, function(line) {
     var existingContent = $("#output").html();
     $("#output").html(existingContent + "<br />" + line);
   }, source);
+
+  var allPropertiesForDisplay = propertyFormatter.extractAllPropertiesForDisplay(source);
+
+  var outputContent = $("#output").html();
+  $("#output").html(
+      outputContent +
+     "<h2>Object properties using propertyFormatter.extractAllPropertiesForDisplay:</h2>" +
+     allPropertiesForDisplay);
+
 });
