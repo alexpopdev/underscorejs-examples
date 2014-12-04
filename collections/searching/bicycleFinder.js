@@ -88,6 +88,21 @@ var bicycleFinder = (function() {
       return _.find(bicycles, function(bicycle) {
         return bicycle.type === type && bicycle.rentPrice <= maxRentPrice;
       });
+    },
+    findBicycleById: function(id){
+      var bicycles = getBicycles();
+      return _.findWhere(bicycles, {id: id});
+    },
+    hasBicycle: function(type, maxRentPrice) {
+      var bicycles = getBicycles();
+      return _.some(bicycles, function(bicycle) {
+        return bicycle.type === type && bicycle.rentPrice <= maxRentPrice;
+      });
+    },
+    hasBicycleWithId: function(id) {
+      var bicycles = getBicycles();
+      var bicycleIds = _.pluck(bicycles,"id");
+      return _.contains(bicycleIds, id);
     }
   };
 }());

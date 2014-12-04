@@ -5,7 +5,6 @@ $(document).ready(function() {
   var displayContent = propertyFormatter.extractAllPropertiesForDisplay(bicycle);
 
   $("#output").html(
-    "<h2>Bicycle properties:</h2>" +
+    "<h2>Found bicycle properties:</h2>" +
     displayContent);
-
 });
