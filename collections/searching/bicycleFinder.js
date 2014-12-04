@@ -1,0 +1,93 @@
+var bicycleFinder = (function() {
+  "use strict";
+
+  var getBicycles = function() {
+    return [{
+      id: 1,
+      name: "A fast bike",
+      type: "Road Bike",
+      quantity: 10,
+      rentPrice: 20,
+      dateAdded: new Date(2015, 1, 2)
+    }, {
+      id: 2,
+      name: "An even faster bike",
+      type: "Road Bike",
+      quantity: 4,
+      rentPrice: 25,
+      dateAdded: new Date(2015, 2, 25)
+    }, {
+      id: 3,
+      name: "A springy bike",
+      type: "Mountain Bike",
+      quantity: 20,
+      rentPrice: 18,
+      dateAdded: new Date(2014, 12, 1)
+    }, {
+      id: 4,
+      name: "A springier bike",
+      type: "Mountain Bike",
+      quantity: 10,
+      rentPrice: 22,
+      dateAdded: new Date(2014, 4, 1)
+    }, {
+      id: 5,
+      name: "An all-terain bike",
+      type: "Mountain Bike",
+      quantity: 5,
+      rentPrice: 27,
+      dateAdded: new Date(2014, 8, 14)
+    }, {
+      id: 6,
+      name: "A classy bike",
+      type: "Urban Bike",
+      quantity: 30,
+      rentPrice: 15,
+      dateAdded: new Date(2014, 6, 27)
+    }, {
+      id: 7,
+      name: "A modern bike",
+      type: "Urban Bike",
+      quantity: 20,
+      rentPrice: 17,
+      dateAdded: new Date(2015, 1, 19)
+    }, {
+      id: 8,
+      name: "A blue bike",
+      type: "Children Bike",
+      quantity: 25,
+      rentPrice: 10,
+      dateAdded: new Date(2014, 12, 20)
+    }, {
+      id: 9,
+      name: "A pink bike",
+      type: "Children Bike",
+      quantity: 25,
+      rentPrice: 10,
+      dateAdded: new Date(2015, 2, 5)
+    }, {
+      id: 10,
+      name: "A noisy bike",
+      type: "Children Bike",
+      quantity: 3,
+      rentPrice: 12,
+      dateAdded: new Date(2014, 8, 23)
+    }, {
+      id: 11,
+      name: "A clown bike",
+      type: "Children Bike",
+      quantity: 2,
+      rentPrice: 12,
+      dateAdded: new Date(2014, 11, 1)
+    }];
+  };
+
+  return {
+    findBicycle: function(type, maxRentPrice) {
+      var bicycles = getBicycles();
+      return _.find(bicycles, function(bicycle) {
+        return bicycle.type === type && bicycle.rentPrice <= maxRentPrice;
+      });
+    }
+  };
+}());
