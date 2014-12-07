@@ -90,26 +90,23 @@ var bicycleFinder = (function() {
   };
 
   return {
-    findBicycle: function(type, maxRentPrice) {
+    filterBicycles: function(type, maxRentPrice) {
       var bicycles = getBicycles();
-      return _.find(bicycles, function(bicycle) {
+      return _.filter(bicycles, function(bicycle) {
         return bicycle.type === type && bicycle.rentPrice <= maxRentPrice;
       });
     },
-    findBicycleById: function(id){
+    filterBicyclesByType: function(type) {
       var bicycles = getBicycles();
-      return _.findWhere(bicycles, {id: id});
-    },
-    hasBicycle: function(type, maxRentPrice) {
-      var bicycles = getBicycles();
-      return _.some(bicycles, function(bicycle) {
-        return bicycle.type === type && bicycle.rentPrice <= maxRentPrice;
+      return _.where(bicycles, {
+        type: type
       });
     },
-    hasBicycleWithId: function(id) {
+    getAllBicyclesForSetRentPrice: function(setRentPrice) {
       var bicycles = getBicycles();
-      var bicycleIds = _.pluck(bicycles,"id");
-      return _.contains(bicycleIds, id);
+      return _.reject(bicycles, function(bicycle) {
+        return bicycle.rentPrice > setRentPrice;
+      });
     }
   };
 }());
