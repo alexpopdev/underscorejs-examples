@@ -92,9 +92,13 @@ var bicycleAggregator = (function() {
   return {
     getAverageRentalPrice: function(type) {
       var bicycles = getBicycles();
-      var filteredBicycles = _.filter(bicycles, function(bicycle) {
-        return !type || bicycle.type === type;
-      });
+      var filteredBicycles = bicycles;
+      if (type) {
+        filteredBicycles = _.where(bicycles, {
+          type: type
+        });
+      }
+
       return _.reduce(filteredBicycles, function(memo, bicycle) {
         return memo + bicycle.rentPrice;
       }, 0) / _.size(filteredBicycles);
