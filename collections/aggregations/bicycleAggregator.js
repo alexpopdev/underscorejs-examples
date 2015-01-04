@@ -1,4 +1,4 @@
-var bicycleFinder = (function() {
+var bicycleAggregator = (function() {
   "use strict";
 
   var getBicycles = function() {
@@ -90,23 +90,14 @@ var bicycleFinder = (function() {
   };
 
   return {
-    filterBicycles: function(type, maxRentPrice) {
+    getAverageRentalPrice: function(type) {
       var bicycles = getBicycles();
-      return _.filter(bicycles, function(bicycle) {
-        return bicycle.type === type && bicycle.rentPrice <= maxRentPrice;
+      var filteredBicycles = _.filter(bicycles, function(bicycle) {
+        return !type || bicycle.type === type;
       });
-    },
-    filterBicyclesByType: function(type) {
-      var bicycles = getBicycles();
-      return _.where(bicycles, {
-        type: type
-      });
-    },
-    getAllBicyclesForSetRentPrice: function(setRentPrice) {
-      var bicycles = getBicycles();
-      return _.reject(bicycles, function(bicycle) {
-        return bicycle.rentPrice > setRentPrice;
-      });
+      return _.reduce(filteredBicycles, function(memo, bicycle) {
+        return memo + bicycle.rentPrice;
+      }, 0) / _.size(filteredBicycles);
     }
   };
 }());
