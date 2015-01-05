@@ -11,7 +11,7 @@
   <div>Example output:</div>
   <div id="output"></div>
   <script>
-  var people = [{
+    var people = [{
       name: "Herta Muller",
       birthYear: 1953,
       awardYear: 2009
@@ -39,7 +39,7 @@
 
 
     $(document).ready(function() {
-      var peopleWithAwardAge = _.map(people, function(person){
+      var peopleWithAwardAge = _.map(people, function(person) {
         return {
           name: person.name,
           awardAge: person.awardYear - person.birthYear
@@ -48,7 +48,7 @@
 
       var averageAwardAge = _.reduce(peopleWithAwardAge, function(memo, person) {
         return memo + person.awardAge;
-      }, 0)/peopleWithAwardAge.length;
+      }, 0) / peopleWithAwardAge.length;
 
       $("#output").html("<br />Award age for people:");
       _.each(peopleWithAwardAge, function(person) {

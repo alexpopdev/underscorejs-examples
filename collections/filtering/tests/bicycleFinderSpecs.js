@@ -1,4 +1,4 @@
-describe("bicycleFinder", function() {
+describe("Given bicycleFinder", function() {
 
   describe("when calling filterBicycles()", function() {
     var bicycles;
@@ -57,5 +57,5 @@ describe("bicycleFinder", function() {
     });
 
   });
-  
+
 });

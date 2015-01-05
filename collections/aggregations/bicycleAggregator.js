@@ -22,7 +22,7 @@ var bicycleAggregator = (function() {
       type: "Mountain Bike",
       quantity: 20,
       rentPrice: 18,
-      dateAdded: new Date(2014, 12, 1)
+      dateAdded: new Date(2014, 10, 1)
     }, {
       id: 4,
       name: "A springier bike",
@@ -64,7 +64,7 @@ var bicycleAggregator = (function() {
       type: "Children Bike",
       quantity: 25,
       rentPrice: 10,
-      dateAdded: new Date(2014, 12, 20)
+      dateAdded: new Date(2014, 10, 20)
     }, {
       id: 10,
       name: "A pink bike",
@@ -89,6 +89,16 @@ var bicycleAggregator = (function() {
     }];
   };
 
+  var filterBicyclesByType = function(bicycles, type) {
+    if (!type) {
+      return bicycles;
+    }
+
+    return _.where(bicycles, {
+      type: type
+    });
+  };
+
   return {
     getAverageRentalPrice: function(type) {
       var bicycles = getBicycles();
@@ -102,6 +112,21 @@ var bicycleAggregator = (function() {
       return _.reduce(filteredBicycles, function(memo, bicycle) {
         return memo + bicycle.rentPrice;
       }, 0) / _.size(filteredBicycles);
+    },
+    getMostRecentlyAddedBicycle: function(type) {
+      var filteredBicycles = filterBicyclesByType(getBicycles(), type);
+
+      return _.max(filteredBicycles, function(bicycle) {
+        return bicycle.dateAdded;
+      });
+    },
+    getLowestPricedBicycle: function(type) {
+      var filteredBicycles = filterBicyclesByType(getBicycles(), type);
+
+      return _.min(filteredBicycles, function(bicycle) {
+        return bicycle.rentPrice;
+      });
     }
   };
+
 }());

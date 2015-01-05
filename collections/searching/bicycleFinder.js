@@ -22,7 +22,7 @@ var bicycleFinder = (function() {
       type: "Mountain Bike",
       quantity: 20,
       rentPrice: 18,
-      dateAdded: new Date(2014, 12, 1)
+      dateAdded: new Date(2014, 10, 1)
     }, {
       id: 4,
       name: "A springier bike",
@@ -64,7 +64,7 @@ var bicycleFinder = (function() {
       type: "Children Bike",
       quantity: 25,
       rentPrice: 10,
-      dateAdded: new Date(2014, 12, 20)
+      dateAdded: new Date(2014, 10, 20)
     }, {
       id: 10,
       name: "A pink bike",

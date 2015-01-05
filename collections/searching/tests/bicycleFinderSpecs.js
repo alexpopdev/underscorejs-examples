@@ -1,4 +1,4 @@
-describe("bicycleFinder", function() {
+describe("Given bicycleFinder", function() {
 
   describe("when calling findBicycle()", function() {
     var bicycle;

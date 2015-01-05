@@ -1,4 +1,4 @@
-describe("propertyExtractor", function() {
+describe("Given propertyExtractor", function() {
 
   describe("when calling extractStorableProperties()", function() {
     var storableProperties;

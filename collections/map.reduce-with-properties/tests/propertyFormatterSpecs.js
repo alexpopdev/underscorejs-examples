@@ -1,4 +1,4 @@
-describe("propertyFormatter", function() {
+describe("Given propertyFormatter", function() {
 
   describe("when calling extractPropertiesForDisplay()", function() {
     var propertiesForDisplay;
