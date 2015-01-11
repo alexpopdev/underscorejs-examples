@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var displayContent = "All bicycles sorted by rent price: <ul><li>" + bicycleTransformator.getBicyclesInfoSortedByRentPrice().join('</li><li>') + "</li></ul>";
+  var displayContent = "All bicycles sorted by rent price: <ul><li>" + bicycleTransformer.getBicyclesSortedByRentPrice().join('</li><li>') + "</li></ul>";
 
   // displayContent += "<br/><br/>Average rental price for urban bicycles: " + bicycleAggregator.getAverageRentalPrice("Urban Bike").toFixed(2);
   //

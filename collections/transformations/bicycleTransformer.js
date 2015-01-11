@@ -1,4 +1,4 @@
-var bicycleTransformator = (function() {
+var bicycleTransformer = (function() {
   "use strict";
 
   var getBicycles = function() {
