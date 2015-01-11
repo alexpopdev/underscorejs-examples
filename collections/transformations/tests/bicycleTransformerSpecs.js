@@ -17,4 +17,20 @@ describe("Given bicycleTransformer", function() {
     });
   });
 
+  describe("when calling getBicyclesGroupedByYear()", function() {
+    var groupedBicycles = bicycleTransformer.getBicyclesGroupedByYear();
+
+    it("then it returns an object with two properties", function() {
+      expect(groupedBicycles).toBeTruthy();
+      expect(_.size(groupedBicycles)).toEqual(2);
+    });
+
+    it("then the bicycle count for year 2014 should be correct", function() {
+      expect(groupedBicycles['2014'].length).toEqual(8);
+    });
+
+    it("then the bicycle count for year 2015 should be correct", function() {
+      expect(groupedBicycles['2015'].length).toEqual(4);
+    });
+  });
 });

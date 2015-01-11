@@ -107,7 +107,14 @@ var bicycleTransformer = (function() {
       return _.map(sortedBicycles, function(bicycle) {
         return bicycle.name + " - " + bicycle.type + " : " + bicycle.rentPrice;
       });
-    }
+    },
+    getBicyclesGroupedByYear: function(type) {
+      var filteredBicycles = filterBicyclesByType(getBicycles(), type);
+
+      return _.groupBy(filteredBicycles, function(bicycle) {
+        return bicycle.dateAdded.getFullYear();
+      });
+    },
   };
 
 }());
