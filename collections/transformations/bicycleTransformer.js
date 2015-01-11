@@ -115,6 +115,11 @@ var bicycleTransformer = (function() {
         return bicycle.dateAdded.getFullYear();
       });
     },
+    getBicyclesGroupedByPrice: function(type) {
+      var filteredBicycles = filterBicyclesByType(getBicycles(), type);
+
+      return _.groupBy(filteredBicycles, 'rentPrice');
+    }
   };
 
 }());

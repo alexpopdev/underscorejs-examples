@@ -33,4 +33,21 @@ describe("Given bicycleTransformer", function() {
       expect(groupedBicycles['2015'].length).toEqual(4);
     });
   });
+
+  describe("when calling getBicyclesGroupedByPrice()", function() {
+    var groupedBicycles = bicycleTransformer.getBicyclesGroupedByPrice();
+
+    it("then it returns an object with 10 properties", function() {
+      expect(groupedBicycles).toBeTruthy();
+      expect(_.size(groupedBicycles)).toEqual(10);
+    });
+
+    it("then the bicycle count for lowest price should be correct", function() {
+      expect(groupedBicycles['10'].length).toEqual(2);
+    });
+
+    it("then the bicycle count for highest price should be correct", function() {
+      expect(groupedBicycles['27'].length).toEqual(1);
+    });
+  });
 });
