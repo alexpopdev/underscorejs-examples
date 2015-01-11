@@ -7,8 +7,13 @@ describe("Given bicycleTransformer", function() {
       expect(sortedBicycles).toBeTruthy();
       expect(sortedBicycles.length).toEqual(12);
     });
+
     it("then the first bicycle should be correct", function() {
       expect(sortedBicycles[0]).toEqual('A blue bike - Children Bike : 10');
+    });
+
+    it("then the last bicycle should be correct", function() {
+      expect(sortedBicycles[sortedBicycles.length - 1]).toEqual('An all-terain bike - Mountain Bike : 27');
     });
   });
 
