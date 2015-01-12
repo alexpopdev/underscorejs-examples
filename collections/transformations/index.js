@@ -9,17 +9,8 @@ $(document).ready(function() {
   var bicyclesGroupedByPrice = bicycleTransformer.getBicyclesGroupedByPrice();
   displayContent += "<br/><br/>Bicycles grouped by lowest price: <ul><li>" + _.pluck(bicyclesGroupedByPrice["10"], 'name').join('</li><li>') + "</li></ul>";
 
-  // var bicycle = bicycleAggregator.getMostRecentlyAddedBicycle();
-  //
-  // displayContent += "<br/><br/>Most recently added bicycle: '" + bicycle.name + "' on: " + bicycle.dateAdded.toISOString();
-  //
-  // bicycle = bicycleAggregator.getMostRecentlyAddedBicycle("Urban Bike");
-  //
-  // displayContent += "<br/><br/>Most recently added urban bicycle: '" + bicycle.name + "' on: " + bicycle.dateAdded.toISOString();
-  //
-  // bicycle = bicycleAggregator.getLowestPricedBicycle("Urban Bike");
-  //
-  // displayContent += "<br/><br/>Lowest priced urban bicycle: '" + bicycle.name + "' with rental price: " + bicycle.rentPrice;
+  var bicyclesIndexedById = bicycleTransformer.getBicyclesIndexedById();
+  displayContent += "<br/><br/>Bicycles indexes by Id: <ul><li>" + _.pluck(bicyclesIndexedById, 'id').join('</li><li>') + "</li></ul>";
 
   $("#output").html(
     "<h2>Transformations with bicycles:</h2>" +

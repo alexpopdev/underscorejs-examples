@@ -119,6 +119,11 @@ var bicycleTransformer = (function() {
       var filteredBicycles = filterBicyclesByType(getBicycles(), type);
 
       return _.groupBy(filteredBicycles, 'rentPrice');
+    },
+    getBicyclesIndexedById: function(type) {
+      var bicycles = getBicycles();
+
+      return _.indexBy(bicycles, 'id');
     }
   };
 

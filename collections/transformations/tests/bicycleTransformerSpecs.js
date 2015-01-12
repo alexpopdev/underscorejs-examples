@@ -50,4 +50,21 @@ describe("Given bicycleTransformer", function() {
       expect(groupedBicycles['27'].length).toEqual(1);
     });
   });
+
+  describe("when calling getBicyclesIndexedById()", function() {
+    var indexedBicycles = bicycleTransformer.getBicyclesIndexedById();
+
+    it("then it returns an object with 12 properties", function() {
+      expect(indexedBicycles).toBeTruthy();
+      expect(_.size(indexedBicycles)).toEqual(12);
+    });
+
+    it("then the first indexed bicycle should be correct", function() {
+      expect(indexedBicycles['1'].name).toEqual('A fast bike');
+    });
+
+    it("then the last indexed bicycle count should be correct", function() {
+      expect(indexedBicycles['12'].name).toEqual('A clown bike');
+    });
+  });
 });
