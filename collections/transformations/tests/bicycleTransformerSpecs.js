@@ -67,4 +67,21 @@ describe("Given bicycleTransformer", function() {
       expect(indexedBicycles['12'].name).toEqual('A clown bike');
     });
   });
+
+  describe("when calling getBicyclesCountByType()", function() {
+    var bicyclesCount = bicycleTransformer.getBicyclesCountByType();
+
+    it("then it returns an object with 4 properties", function() {
+      expect(bicyclesCount).toBeTruthy();
+      expect(_.size(bicyclesCount)).toEqual(4);
+    });
+
+    it("then the bicycle count for 'Urban Bike' should be correct", function() {
+      expect(bicyclesCount['Urban Bike']).toEqual(3);
+    });
+
+    it("then the bicycle count for 'Road Bike' should be correct", function() {
+      expect(bicyclesCount['Road Bike']).toEqual(2);
+    });
+  });
 });

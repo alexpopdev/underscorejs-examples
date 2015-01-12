@@ -124,6 +124,11 @@ var bicycleTransformer = (function() {
       var bicycles = getBicycles();
 
       return _.indexBy(bicycles, 'id');
+    },
+    getBicyclesCountByType: function() {
+      var bicycles = getBicycles();
+
+      return _.countBy(bicycles, 'type');
     }
   };
 
