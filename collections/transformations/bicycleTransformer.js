@@ -120,7 +120,7 @@ var bicycleTransformer = (function() {
 
       return _.groupBy(filteredBicycles, 'rentPrice');
     },
-    getBicyclesIndexedById: function(type) {
+    getBicyclesIndexedById: function() {
       var bicycles = getBicycles();
 
       return _.indexBy(bicycles, 'id');
