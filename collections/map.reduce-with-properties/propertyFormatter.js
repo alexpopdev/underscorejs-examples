@@ -21,19 +21,18 @@ var propertyFormatter = (function() {
         return [];
       }
 
-      return _.reduce(source, function(memo,value, key) {
-        if(memo && memo !== "")
-          {
+      return _.reduce(source, function(memo, value, key) {
+          if (memo && memo !== "") {
             memo += "<br/>";
           }
-        var isDate = typeof value === 'object' && value instanceof Date;
-        if (isDate || typeof value === 'boolean' || typeof value === 'number' ||
-          typeof value === 'string') {
+          var isDate = typeof value === 'object' && value instanceof Date;
+          if (isDate || typeof value === 'boolean' || typeof value === 'number' ||
+            typeof value === 'string') {
             return memo + "Property: " + key + " of type: " + typeof value + " has value: " + value;
           }
           return memo + "Property: " + key + " cannot be displayed.";
         },
         "");
-      }
+    }
   };
 }());
