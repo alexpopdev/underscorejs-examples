@@ -1,3 +1,4 @@
+// Use the contents of this file on http://www.json-generator.com/ to generate random data
 [
   '{{repeat(250)}}',
   {
