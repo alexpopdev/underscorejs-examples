@@ -37,4 +37,42 @@ describe("Given clientRetriever", function() {
       expect(clients[clients.length - 1].id).toEqual(243);
     });
   });
+
+  describe("when calling getOlderClients()", function() {
+    var clients = clientRetriever.getOlderClients(5);
+
+    it("then it returns an array of correct length", function() {
+      expect(clients).toBeTruthy();
+      expect(clients.length).toEqual(245);
+    });
+
+    it("then the first client should be correct", function() {
+      expect(clients[0]).toBeTruthy();
+      expect(clients[0].id).toEqual(150);
+    });
+
+    it("then the last client should be correct", function() {
+      expect(clients[clients.length - 1]).toBeTruthy();
+      expect(clients[clients.length - 1].id).toEqual(200);
+    });
+  });
+
+  describe("when calling getNewerClients()", function() {
+    var clients = clientRetriever.getNewerClients(5);
+
+    it("then it returns an array of correct length", function() {
+      expect(clients).toBeTruthy();
+      expect(clients.length).toEqual(245);
+    });
+
+    it("then the first client should be correct", function() {
+      expect(clients[0]).toBeTruthy();
+      expect(clients[0].id).toEqual(85);
+    });
+
+    it("then the last client should be correct", function() {
+      expect(clients[clients.length - 1]).toBeTruthy();
+      expect(clients[clients.length - 1].id).toEqual(69);
+    });
+  });
 });

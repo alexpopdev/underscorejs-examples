@@ -8,6 +8,12 @@ var clientRetriever = (function() {
     },
     getOldestClients: function(count) {
       return _.first(_.sortBy(clients, 'registered'), count);
-    }
+    },
+    getOlderClients: function(skipLastCount) {
+      return _.initial(_.sortBy(clients, 'registered'), skipLastCount);
+    },
+    getNewerClients: function(skipFirstCount) {
+      return _.rest(_.sortBy(clients, 'registered'), skipFirstCount);
+    },
   };
 }());
