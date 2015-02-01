@@ -102,4 +102,13 @@ describe("Given clientRetriever", function() {
       expect(clients.length).toEqual(11);
     });
   });
+
+  describe("when calling getOldestOrBestClientsThatAreNotBoth()", function() {
+    var clients = clientRetriever.getOldestOrBestClientsThatAreNotBoth(50);
+
+    it("then it returns an array of correct length", function() {
+      expect(clients).toBeTruthy();
+      expect(clients.length).toEqual(78);
+    });
+  });
 });
