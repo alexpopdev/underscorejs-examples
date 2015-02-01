@@ -15,5 +15,17 @@ var clientRetriever = (function() {
     getNewerClients: function(skipFirstCount) {
       return _.rest(_.sortBy(clients, 'registered'), skipFirstCount);
     },
+    getOldestOrBestClients: function(count) {
+      var oldestClients = _.first(_.sortBy(clients, 'registered'), count);
+      var bestClients = _.last(_.sortBy(clients, 'bikePoints'), count);
+      var oldestOrBestClients = _.union(oldestClients, bestClients);
+      return oldestOrBestClients;
+    },
+    getOldestAndBestClients: function(count) {
+      var oldestClients = _.first(_.sortBy(clients, 'registered'), count);
+      var bestClients = _.last(_.sortBy(clients, 'bikePoints'), count);
+      var oldestAndBestClients = _.intersection(oldestClients, bestClients);
+      return oldestAndBestClients;
+    }
   };
 }());

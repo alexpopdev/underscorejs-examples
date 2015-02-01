@@ -75,4 +75,22 @@ describe("Given clientRetriever", function() {
       expect(clients[clients.length - 1].id).toEqual(69);
     });
   });
+
+  describe("when calling getOldestOrBestClients()", function() {
+    var clients = clientRetriever.getOldestOrBestClients(50);
+
+    it("then it returns an array of correct length", function() {
+      expect(clients).toBeTruthy();
+      expect(clients.length).toEqual(89);
+    });
+  });
+
+  describe("when calling getOldestAndBestClients()", function() {
+    var clients = clientRetriever.getOldestAndBestClients(50);
+
+    it("then it returns an array of correct length", function() {
+      expect(clients).toBeTruthy();
+      expect(clients.length).toEqual(11);
+    });
+  });
 });
