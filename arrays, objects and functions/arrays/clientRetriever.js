@@ -21,6 +21,12 @@ var clientRetriever = (function() {
       var oldestOrBestClients = _.union(oldestClients, bestClients);
       return oldestOrBestClients;
     },
+    getOldestOrBestClientsWithuniq: function(count) {
+      var oldestClients = _.first(_.sortBy(clients, 'registered'), count);
+      var bestClients = _.last(_.sortBy(clients, 'bikePoints'), count);
+      var oldestOrBestClientsWithDuplicates = oldestClients.concat(bestClients);
+      return _.uniq(oldestOrBestClientsWithDuplicates);
+    },
     getOldestAndBestClients: function(count) {
       var oldestClients = _.first(_.sortBy(clients, 'registered'), count);
       var bestClients = _.last(_.sortBy(clients, 'bikePoints'), count);

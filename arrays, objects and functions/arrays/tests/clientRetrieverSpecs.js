@@ -85,6 +85,15 @@ describe("Given clientRetriever", function() {
     });
   });
 
+  describe("when calling getOldestOrBestClientsWithuniq()", function() {
+    var clients = clientRetriever.getOldestOrBestClientsWithuniq(50);
+
+    it("then it returns an array of correct length", function() {
+      expect(clients).toBeTruthy();
+      expect(clients.length).toEqual(89);
+    });
+  });
+
   describe("when calling getOldestAndBestClients()", function() {
     var clients = clientRetriever.getOldestAndBestClients(50);
 
