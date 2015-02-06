@@ -41,14 +41,13 @@ var clientRetriever = (function() {
       return _.difference(oldestOrBestClients, oldestAndBestClients);
     },
     getClientsAndOrdersAsArrays: function() {
+      var clientIds = _.pluck(clients, 'id');
+      var clientNames = _.pluck(clients, 'name');
+
       var clientOrders = dataProvider.getClientOrders();
       var ordersCount = _.map(clientOrders, function(clientOrder) {
         return clientOrder.orders.length;
       });
-
-      var clientIds = _.pluck(clients, 'id');
-
-      var clientNames = _.pluck(clients, 'name');
 
       var clientAndOrders = _.zip(clientIds, clientNames, ordersCount);
       return clientAndOrders;
