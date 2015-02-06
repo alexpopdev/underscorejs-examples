@@ -111,4 +111,19 @@ describe("Given clientRetriever", function() {
       expect(clients.length).toEqual(78);
     });
   });
+
+  describe("when calling getClientsAndOrdersAsArrays()", function() {
+    var clientsAndOrders = clientRetriever.getClientsAndOrdersAsArrays();
+
+    it("then it returns an array of correct length", function() {
+      expect(clientsAndOrders).toBeTruthy();
+      expect(clients.length).toEqual(250);
+    });
+    it("then the first element is correct", function() {
+      expect(clientsAndOrders[0].length).toEqual(3);
+      expect(clientsAndOrders[0][0]).toEqual(1);
+      expect(clientsAndOrders[0][1]).toEqual('Baxter Brooks');
+      expect(clientsAndOrders[0][2]).toEqual(1);
+    });
+  });
 });

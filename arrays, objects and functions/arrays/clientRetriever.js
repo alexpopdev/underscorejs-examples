@@ -39,6 +39,19 @@ var clientRetriever = (function() {
       var oldestOrBestClients = _.union(oldestClients, bestClients);
       var oldestAndBestClients = _.intersection(oldestClients, bestClients);
       return _.difference(oldestOrBestClients, oldestAndBestClients);
+    },
+    getClientsAndOrdersAsArrays: function() {
+      var clientOrders = dataProvider.getClientOrders();
+      var ordersCount = _.map(clientOrders, function(clientOrder) {
+        return clientOrder.orders.length;
+      });
+
+      var clientIds = _.pluck(clients, 'id');
+
+      var clientNames = _.pluck(clients, 'name');
+
+      var clientAndOrders = _.zip(clientIds, clientNames, ordersCount);
+      return clientAndOrders;
     }
   };
 }());

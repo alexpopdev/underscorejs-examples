@@ -22,6 +22,10 @@ $(document).ready(function() {
 
   displayContent += "The intersection of top 50 oldest and best clients has a count of : " + clients.length + ".<br/>";
 
+  var clientsAndOrders = clientRetriever.getClientsAndOrdersAsArrays();
+
+  displayContent += "The client with id " + clientsAndOrders[0][0] + " and name '" + clientsAndOrders[0][1] + "' has placed " + clientsAndOrders[0][2] + " order(s).";
+
   $("#output").html(
     "<h2>Array examples:</h2>" +
     displayContent);
