@@ -1,0 +1,18 @@
+// Use the contents of this file on http://www.json-generator.com/ to generate random data
+[
+  '{{repeat(250)}}',
+  {
+    id: '{{index(1)}}',
+    name: '{{firstName()}} {{surname()}}',
+    gender: '{{gender()}}',
+    company: '{{company().toUpperCase()}}',
+    email: '{{email()}}',
+    phone: '+1 {{phone()}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    preferredBike: '{{random("A fast bike", "An even faster bike", "A springy bike", "A springier bike", "An all-terain bike", "A classy bike", "A modern bike", "A commuter bike", "A blue bike", "A pink bike", "A noisy bike", "A clown bike")}}',
+    bikePoints: '{{integer(1000, 7000)}}',
+    isActive: '{{bool()}}',
+    notes: '{{lorem(1, "paragraphs")}}'
+  }
+]

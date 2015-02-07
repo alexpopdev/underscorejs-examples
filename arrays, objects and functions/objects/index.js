@@ -27,6 +27,6 @@ $(document).ready(function() {
   displayContent += "The client with id " + clientsAndOrders[0][0] + " and name '" + clientsAndOrders[0][1] + "' has placed " + clientsAndOrders[0][2] + " order(s).";
 
   $("#output").html(
-    "<h2>Arrays examples:</h2>" +
+    "<h2>Array examples:</h2>" +
     displayContent);
 });
