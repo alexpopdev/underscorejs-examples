@@ -3,18 +3,22 @@ var propertyFormatter = (function() {
 
   return {
     extractPropertiesForDisplay: function(source, ignoreId) {
+      var propertiesForDisplay = [];
       if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
-        return [];
+        return propertiesForDisplay;
       }
 
-      return _.map(_.pairs(source), function(keyValue) {
+      _.each(_.pairs(source), function(keyValue) {
         var isDate = typeof keyValue[1] === 'object' && keyValue[1] instanceof Date;
         if (isDate || typeof keyValue[1] === 'boolean' || typeof keyValue[1] === 'number' ||
           typeof keyValue[1] === 'string') {
-          return "Property: " + keyValue[0] + " of type: " + typeof keyValue[1] + " has value: " + keyValue[1];
+          propertiesForDisplay.push("Property: " + keyValue[0] + " of type: " + typeof keyValue[1] + " has value: " + keyValue[1]);
+        } else {
+          propertiesForDisplay.push("Property: " + keyValue[0] + " cannot be displayed.");
         }
-        return "Property: " + keyValue[0] + " cannot be displayed.";
       });
+
+      return propertiesForDisplay;
     },
     extractAllPropertiesForDisplay: function(source, ignoreId) {
       if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
