@@ -1,6 +1,6 @@
 describe("Given propertyFormatter", function() {
 
-  describe("when calling extractPropertiesForDisplay()", function() {
+  describe("when calling extractPropertiesForDisplay(object)", function() {
     var propertiesForDisplay;
 
     beforeEach(function() {
@@ -30,7 +30,19 @@ describe("Given propertyFormatter", function() {
     });
   });
 
-  describe("when calling extractAllPropertiesForDisplay()", function() {
+  describe("when calling extractPropertiesForDisplay({}, true) (for an empty object)", function() {
+    var propertiesForDisplay;
+
+    beforeEach(function() {
+      propertiesForDisplay = propertyFormatter.extractPropertiesForDisplay({}, true);
+    });
+
+    it("then the returned property count should be correct", function() {
+      expect(propertiesForDisplay.length).toEqual(0);
+    });
+  });
+
+  describe("when calling extractAllPropertiesForDisplay(object)", function() {
     var allPropertiesForDisplay;
 
     beforeEach(function() {

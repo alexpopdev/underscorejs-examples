@@ -1,4 +1,4 @@
-describe("Given clientRetriever", function() {
+describe("Given objectsUtils", function() {
 
   describe("when calling getNewestClients()", function() {
     var clients = clientRetriever.getNewestClients(5);
