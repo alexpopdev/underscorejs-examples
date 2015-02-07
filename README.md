@@ -11,7 +11,7 @@ If these examples prove useful to the community I intend to create a branch afte
 ##Examples index
 The examples are organised in these sections (that match a specific chapter of the book):
 
-### Getting started (Chapter 1: The building blocks of Underscore.js)
+### [Getting started](getting-started) (Chapter 1: The building blocks of Underscore.js)
 1. Starter example with ECMAScript 5 - [code](getting-started/starter-example-with-ECMAScript5), [preview](http://plnkr.co/edit/EP3H268pw1wQbu4cp9iU?p=preview)
 2. Starter example with Underscore find - [code](getting-started/starter-example-with-underscore.find), [preview](http://plnkr.co/edit/O3vUZspyamLOnoMl4aWK?p=preview)
 3. Starter example with Underscore countBy - [code](getting-started/starter-example-with-underscore.countBy), [preview](http://plnkr.co/edit/H7UjDsgfxhuUPPC1UDq6?p=preview)
@@ -23,10 +23,10 @@ The examples are organised in these sections (that match a specific chapter of t
 9. Underscore map/reduce example with Jasmine tests - [code](getting-started/underscore.map.reduce-with-jasmine)
 
 
-### Collections (Chapter 2: Using Underscore.js with collections)
+### [Collections](collections) (Chapter 2: Using Underscore.js with collections)
 1. ???
 
-### Arrays, functions and objects (Chapter3: Using Underscore.js with arrays, functions and objects)
+### [Arrays, functions and objects](arrays%2C%20objects%20and%20functions) (Chapter3: Using Underscore.js with arrays, functions and objects)
 1. ???
 
 ### OOP, FP and an utility sample (Chapter 4: Programming paradigms with Underscore.js)
