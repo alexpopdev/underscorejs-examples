@@ -7,13 +7,13 @@ var propertyFormatter = (function() {
         return [];
       }
 
-      return _.map(source, function(value, key) {
-        var isDate = typeof value === 'object' && value instanceof Date;
-        if (isDate || typeof value === 'boolean' || typeof value === 'number' ||
-          typeof value === 'string') {
-          return "Property: " + key + " of type: " + typeof value + " has value: " + value;
+      return _.map(_.pairs(source), function(keyValue) {
+        var isDate = typeof keyValue[1] === 'object' && keyValue[1] instanceof Date;
+        if (isDate || typeof keyValue[1] === 'boolean' || typeof keyValue[1] === 'number' ||
+          typeof keyValue[1] === 'string') {
+          return "Property: " + keyValue[0] + " of type: " + typeof keyValue[1] + " has value: " + keyValue[1];
         }
-        return "Property: " + key + " cannot be displayed.";
+        return "Property: " + keyValue[0] + " cannot be displayed.";
       });
     },
     extractAllPropertiesForDisplay: function(source, ignoreId) {
