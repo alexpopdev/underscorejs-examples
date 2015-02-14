@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-  var clients = clientRetriever.getOldestClients(5);
-  var displayContent = "Top 5 oldest clients: <ul><li>" +
+  var clients = _.first(clientRetriever.getClientsIdAndName(), 5);
+  var displayContent = "First 5 clients with id and name: <ul><li>" +
     _.map(clients, function(client) {
-      return client.id + ": " + client.name + ", registered on " + client.registered;
+      return JSON.stringify(client);
     }).join('</li><li>') +
     "</li></ul>";
 
