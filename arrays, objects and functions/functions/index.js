@@ -18,7 +18,7 @@ $(document).ready(function() {
     function(func) {
       return function() {
         var result = func.apply(this, arguments);
-        result.push("Displayable property count is " + result.length + ".");
+        result.push("Processed property count is " + result.length + ".");
         return result;
       };
     })();
