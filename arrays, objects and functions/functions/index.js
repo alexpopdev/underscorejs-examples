@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
   };
 
-  var extractPropertiesForDisplayWithFinalProperiesCount = _.wrap(
+  var extractPropertiesForDisplayWithFinalPropertiesCount = _.wrap(
     propertyFormatter.extractPropertiesForDisplay,
     function(func) {
       return function() {
@@ -23,7 +23,7 @@ $(document).ready(function() {
       };
     })();
 
-  var propertiesForDisplay = extractPropertiesForDisplayWithFinalProperiesCount(source);
+  var propertiesForDisplay = extractPropertiesForDisplayWithFinalPropertiesCount(source);
 
   $("#output").html("<h2>Object properties using a _.wrap version of propertyFormatter.extractPropertiesForDisplay:</h2>");
 
