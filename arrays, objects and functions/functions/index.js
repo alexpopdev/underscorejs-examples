@@ -30,7 +30,7 @@ $(document).ready(function() {
   _.each(propertiesForDisplay, function(line) {
     var existingContent = $("#output").html();
     $("#output").html(existingContent + "<br />" + line);
-  }, source);
+  });
 
   var allPropertiesForDisplay = propertyFormatter.extractAllPropertiesForDisplay(source);
 
