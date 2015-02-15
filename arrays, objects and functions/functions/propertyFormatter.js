@@ -21,6 +21,7 @@ var propertyFormatter = (function() {
   };
 
   var extractDataPropertiesForDisplayForAnyObject = _.partial(extractDataPropertiesForDisplay, _, true);
+
   return {
     extractPropertiesForDisplay: function(source, ignoreId) {
       var propertiesForDisplay = [];
