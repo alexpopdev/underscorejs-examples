@@ -13,9 +13,19 @@ $(document).ready(function() {
     }
   };
 
-  var propertiesForDisplay = propertyFormatter.extractPropertiesForDisplay(source);
+  var extractPropertiesForDisplayWithFinalProperiesCount = _.wrap(
+    propertyFormatter.extractPropertiesForDisplay,
+    function(func) {
+      return function() {
+        var result = func.apply(this, arguments);
+        result.push("Displayable property count is " + result.length + ".");
+        return result;
+      };
+    })();
 
-  $("#output").html("<h2>Object properties using propertyFormatter.extractPropertiesForDisplay:</h2>");
+  var propertiesForDisplay = extractPropertiesForDisplayWithFinalProperiesCount(source);
+
+  $("#output").html("<h2>Object properties using a _.wrap version of propertyFormatter.extractPropertiesForDisplay:</h2>");
 
   _.each(propertiesForDisplay, function(line) {
     var existingContent = $("#output").html();
