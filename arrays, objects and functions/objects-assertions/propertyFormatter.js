@@ -4,17 +4,17 @@ var propertyFormatter = (function() {
   return {
     extractPropertiesForDisplay: function(source, ignoreId) {
       var propertiesForDisplay = [];
-      if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
+      if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return propertiesForDisplay;
       }
 
       _.each(_.pairs(source), function(keyValue) {
-        var isDate = typeof keyValue[1] === 'object' && keyValue[1] instanceof Date;
-        if (isDate || typeof keyValue[1] === 'boolean' || typeof keyValue[1] === 'number' ||
-          typeof keyValue[1] === 'string') {
-          propertiesForDisplay.push("Property: " + keyValue[0] + " of type: " + typeof keyValue[1] + " has value: " + keyValue[1]);
+        var key = keyValue[0];
+        var value = keyValue[1];
+        if (_.isDate(value) || _.isBoolean(value) || _.isNumber(value) || _.isString(value)) {
+          propertiesForDisplay.push("Property '" + key + "' of type: " + typeof value + " has value: " + value);
         } else {
-          propertiesForDisplay.push("Property: " + keyValue[0] + " cannot be displayed.");
+          propertiesForDisplay.push("Property '" + key + "' cannot be displayed.");
         }
       });
 
@@ -22,26 +22,25 @@ var propertyFormatter = (function() {
     },
     extractDataPropertiesForDisplay: function(source, ignoreId) {
       var propertiesForDisplay = [];
-      if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
+      if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return propertiesForDisplay;
       }
 
-      var functionNames = _.functions(source);
-
       _.each(_.pairs(source), function(keyValue) {
-        var isDate = typeof keyValue[1] === 'object' && keyValue[1] instanceof Date;
-        if (isDate || typeof keyValue[1] === 'boolean' || typeof keyValue[1] === 'number' ||
-          typeof keyValue[1] === 'string') {
-          propertiesForDisplay.push("Property: " + keyValue[0] + " of type: " + typeof keyValue[1] + " has value: " + keyValue[1]);
-        } else if (!_.contains(functionNames, keyValue[0])) {
+        var key = keyValue[0];
+        var value = keyValue[1];
+        if (_.isDate(value) || _.isBoolean(value) || _.isNumber(value) || _.isString(value)) {
+          propertiesForDisplay.push("Property '" + key + "' of type: " + typeof value + " has value: " + value);
+        } else if (!_.isFunction(value)) {
           propertiesForDisplay.push("Property: " + keyValue[0] + " cannot be displayed.");
         }
       });
 
       return propertiesForDisplay;
     },
+
     extractAllPropertiesForDisplay: function(source, ignoreId) {
-      if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
+      if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return [];
       }
 
@@ -50,8 +49,7 @@ var propertyFormatter = (function() {
             memo += "<br/>";
           }
           var isDate = typeof value === 'object' && value instanceof Date;
-          if (isDate || typeof value === 'boolean' || typeof value === 'number' ||
-            typeof value === 'string') {
+          if (_.isDate(value) || _.isBoolean(value) || _.isNumber(value) || _.isString(value)) {
             return memo + "Property: " + key + " of type: " + typeof value + " has value: " + value;
           }
           return memo + "Property: " + key + " cannot be displayed.";
