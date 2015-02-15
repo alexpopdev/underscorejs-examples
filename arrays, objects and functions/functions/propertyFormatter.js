@@ -1,6 +1,26 @@
 var propertyFormatter = (function() {
   "use strict";
 
+  var extractDataPropertiesForDisplay = function(source, ignoreId) {
+    var propertiesForDisplay = [];
+    if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
+      return propertiesForDisplay;
+    }
+
+    _.each(_.pairs(source), function(keyValue) {
+      var key = keyValue[0];
+      var value = keyValue[1];
+      if (_.isDate(value) || _.isBoolean(value) || _.isNumber(value) || _.isString(value)) {
+        propertiesForDisplay.push("Property '" + key + "' of type: " + typeof value + " has value: " + value);
+      } else if (!_.isFunction(value)) {
+        propertiesForDisplay.push("Property: " + keyValue[0] + " cannot be displayed.");
+      }
+    });
+
+    return propertiesForDisplay;
+  };
+
+  var extractDataPropertiesForDisplayForAnyObject = _.partial(extractDataPropertiesForDisplay, _, true);
   return {
     extractPropertiesForDisplay: function(source, ignoreId) {
       var propertiesForDisplay = [];
@@ -20,25 +40,8 @@ var propertyFormatter = (function() {
 
       return propertiesForDisplay;
     },
-    extractDataPropertiesForDisplay: function(source, ignoreId) {
-      var propertiesForDisplay = [];
-      if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
-        return propertiesForDisplay;
-      }
-
-      _.each(_.pairs(source), function(keyValue) {
-        var key = keyValue[0];
-        var value = keyValue[1];
-        if (_.isDate(value) || _.isBoolean(value) || _.isNumber(value) || _.isString(value)) {
-          propertiesForDisplay.push("Property '" + key + "' of type: " + typeof value + " has value: " + value);
-        } else if (!_.isFunction(value)) {
-          propertiesForDisplay.push("Property: " + keyValue[0] + " cannot be displayed.");
-        }
-      });
-
-      return propertiesForDisplay;
-    },
-
+    extractDataPropertiesForDisplay: extractDataPropertiesForDisplay,
+    extractDataPropertiesForDisplayForAnyObject: extractDataPropertiesForDisplayForAnyObject,
     extractAllPropertiesForDisplay: function(source, ignoreId) {
       if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return [];
