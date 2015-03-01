@@ -2,6 +2,21 @@ var Contact = (function() {
   "use strict";
 
   function Contact(id, name, gender, company, email, phone, address) {
+    var argsArray = _.toArray(arguments);
+    if (argsArray.length != 7) {
+      throw {
+        name: "ArgumentsException",
+        message: "The arguments length is incorrect."
+      };
+    }
+
+    if (!_.isNumber(id) || !_.isString(name) || !_.isString(gender) || !_.isString(company) || !_.isString(email) || !_.isString(phone) || !_.isString(address)) {
+      throw {
+        name: "ArgumentsException",
+        message: "One of the arguments does not have the expected type."
+      };
+    }
+
     this.id = id;
     this.name = name;
     this.gender = gender;
@@ -23,6 +38,21 @@ var Client = (function() {
   "use strict";
 
   function Client(id, name, gender, company, email, phone, address, registered, preferredBike, bikePoints, notes) {
+    var argsArray = _.toArray(arguments);
+    if (argsArray.length != 11) {
+      throw {
+        name: "ArgumentsException",
+        message: "The arguments length is incorrect."
+      };
+    }
+
+    if (!_.isDate(new Date(registered)) || !_.isString(preferredBike) || !_.isNumber(bikePoints) || !_.isString(notes) || !_.isString(email)) {
+      throw {
+        name: "ArgumentsException",
+        message: "One of the arguments does not have the expected type."
+      };
+    }
+
     Contact.call(this, id, name, gender, company, email, phone, address);
     this.type = 'client';
     this.registered = registered;
