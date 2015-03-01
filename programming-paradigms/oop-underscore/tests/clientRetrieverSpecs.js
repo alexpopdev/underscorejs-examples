@@ -1,17 +1,16 @@
 describe("Given clientRetriever", function() {
 
-  describe("when calling getClientsIdAndName()", function() {
-    var clients = clientRetriever.getClientsIdAndName();
+  describe("when calling getClientsUsingConstructorInfo() and getClientsUsingTypeProperty", function() {
+    var clientsForConstructorInfo = clientRetriever.getClientsUsingConstructorInfo();
+    var clientsForTypeProperty = clientRetriever.getClientsUsingTypeProperty();
 
-    it("then it returns an array of correct length", function() {
-      expect(clients).toBeTruthy();
-      expect(clients.length).toEqual(250);
-    });
+    it("then they both returns an array of the same correct length", function() {
+      expect(clientsForConstructorInfo).toBeTruthy();
+      expect(clientsForConstructorInfo.length).toEqual(121);
 
-    it("then the first client should be correct", function() {
-      expect(clients[0]).toBeTruthy();
-      expect(_.keys(clients[0]).length).toEqual(2);
+      expect(clientsForTypeProperty).toBeTruthy();
+      expect(clientsForTypeProperty.length).toEqual(121);
     });
   });
-    
+
 });
