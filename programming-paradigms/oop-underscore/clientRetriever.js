@@ -32,16 +32,16 @@ var clientRetriever = (function() {
 
   return {
     getContacts: getContacts,
-    getClientsUsingConstructorInfo: function() {
-      var contacts = getContacts();
-      return _.filter(contacts, function(contact) {
-        return contact.constructor === Client;
-      });
-    },
     getClientsUsingTypeProperty: function() {
       var contacts = getContacts();
       return _.filter(contacts, function(contact) {
         return contact.type === "client";
+      });
+    },
+    getClientsUsingConstructorInfo: function() {
+      var contacts = getContacts();
+      return _.filter(contacts, function(contact) {
+        return contact.constructor === Client;
       });
     }
   };
