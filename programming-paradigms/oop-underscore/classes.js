@@ -46,7 +46,7 @@ var Client = (function() {
       };
     }
 
-    if (!_.isDate(new Date(registered)) || !_.isString(preferredBike) || !_.isNumber(bikePoints) || !_.isString(notes) || !_.isString(email)) {
+    if (!_.isDate(registered) || !_.isString(preferredBike) || !_.isNumber(bikePoints) || !_.isString(notes)) {
       throw {
         name: "ArgumentsException",
         message: "One of the arguments does not have the expected type."

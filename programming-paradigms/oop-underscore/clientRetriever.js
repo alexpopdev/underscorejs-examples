@@ -22,7 +22,7 @@ var clientRetriever = (function() {
         clientObject.email,
         clientObject.phone,
         clientObject.address,
-        clientObject.registered,
+        new Date(clientObject.registered),
         clientObject.preferredBike,
         clientObject.bikePoints,
         clientObject.notes
