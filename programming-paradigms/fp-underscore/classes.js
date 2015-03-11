@@ -17,10 +17,6 @@ var Contact = (function() {
     this.type = "contact";
   }
 
-  Contact.prototype.getContactNameIdAndType = function() {
-    return this.name + " (" + this.id + " - " + this.type + ")";
-  };
-
   return Contact;
 }());
 

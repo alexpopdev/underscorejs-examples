@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   displayContent += "First 4 contacts with name, id and type: <ul><li>" +
     _.map(_.first(contacts, 4), function(contact) {
-      return contact.getContactNameIdAndType();
+      return transformations.getContactNameIdAndType(contact);
     }).join('</li><li>') +
     "</li></ul>";
 
