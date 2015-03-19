@@ -1,17 +1,37 @@
 $(document).ready(function() {
 
-  var contacts = clientRetriever.getContacts();
-  var displayContent = "There are " + contacts.length + " contacts.<br />";
+  var oldestClients = clientRetriever.getOldestClients(5);
+  var bestClients = clientRetriever.getBestClients(5);
+  var clients = clientRetriever.getClients();
 
-  displayContent += "First 4 contacts with name, id and type: <ul><li>" +
-    _.map(_.first(contacts, 4), function(contact) {
-      return transformations.getContactNameIdAndType(contact);
-    }).join('</li><li>') +
-    "</li></ul>";
+  var onSelectHome = function() {
+    $(".panel-heading").html("Welcome");
+    $(".panel-body").html("<p>There are " + clients.length + " clients.</p>");
+  };
 
-  var clients = clientRetriever.getClientsUsingConstructorInfo();
-  displayContent += "There are " + clients.length + " active clients.<br />";
-  $("#output").html(
-    "<h2>FP with Underscore examples:</h2>" +
-    displayContent);
+  $("#home-btn").click(onSelectHome);
+
+  $("#oldest-clients-btn").click(function() {
+    $(".panel-heading").html("Top 5 oldest clients with name, id and type");
+    var displayContent = "<ul><li>" +
+      _.map(oldestClients, function(contact) {
+        return transformations.getContactNameIdAndType(contact);
+      }).join('</li><li>') +
+      "</li></ul>";
+    $(".panel-body").html(
+      displayContent);
+  });
+  $("#best-clients-btn").click(function() {
+    $(".panel-heading").html("Top 5 best clients with name, id and type");
+
+    var displayContent = "<ul><li>" +
+      _.map(bestClients, function(contact) {
+        return transformations.getContactNameIdAndType(contact);
+      }).join('</li><li>') +
+      "</li></ul>";
+    $(".panel-body").html(
+      displayContent);
+  });
+
+  onSelectHome();
 });
