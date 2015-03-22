@@ -14,8 +14,8 @@ $(document).ready(function() {
   $("#oldest-clients-btn").click(function() {
     $(".panel-heading").html("Top 5 oldest clients with name, id and type");
     var displayContent = "<ul><li>" +
-      _.map(oldestClients, function(contact) {
-        return transformations.getContactNameIdAndType(contact);
+      _.map(oldestClients, function(client) {
+        return transformations.getContactNameIdAndType(client);
       }).join('</li><li>') +
       "</li></ul>";
     $(".panel-body").html(
@@ -25,8 +25,8 @@ $(document).ready(function() {
     $(".panel-heading").html("Top 5 best clients with name, id and type");
 
     var displayContent = "<ul><li>" +
-      _.map(bestClients, function(contact) {
-        return transformations.getContactNameIdAndType(contact);
+      _.map(bestClients, function(client) {
+        return transformations.getContactNameIdAndType(client);
       }).join('</li><li>') +
       "</li></ul>";
     $(".panel-body").html(
