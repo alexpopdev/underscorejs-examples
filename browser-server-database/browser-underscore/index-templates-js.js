@@ -11,24 +11,32 @@ $(document).ready(function() {
 
   $("#home-btn").click(onSelectHome);
 
+  var clientsTemplate = _.template(
+    "<ul><li>" +
+    "<%_.forEach(clients, function (client,index) {%>" +
+    "<%if (index>0) {%>" +
+    "</li><li>" +
+    "<%}%>" +
+    "<%=transformations.getContactNameIdAndType(client)%>" +
+    "<%})%>" +
+    "</li></ul>");
+
   $("#oldest-clients-btn").click(function() {
     $(".panel-heading").html("Top 5 oldest clients with name, id and type");
-    var displayContent = "<ul><li>" +
-      _.map(oldestClients, function(client) {
-        return transformations.getContactNameIdAndType(client);
-      }).join('</li><li>') +
-      "</li></ul>";
-    $(".panel-body").html(displayContent);
+    var displayContent = clientsTemplate({
+      clients: oldestClients
+    });
+    $(".panel-body").html(
+      displayContent);
   });
   $("#best-clients-btn").click(function() {
     $(".panel-heading").html("Top 5 best clients with name, id and type");
 
-    var displayContent = "<ul><li>" +
-      _.map(bestClients, function(client) {
-        return transformations.getContactNameIdAndType(client);
-      }).join('</li><li>') +
-      "</li></ul>";
-    $(".panel-body").html(displayContent);
+    var displayContent = clientsTemplate({
+      clients: bestClients
+    });
+    $(".panel-body").html(
+      displayContent);
   });
 
   onSelectHome();

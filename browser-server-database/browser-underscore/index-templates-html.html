@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Browser jQuery</title>
+  <title>Browser Underscore templates with HTML</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 
@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-header">
-          <h1>Browser jQuery examples
+          <h1>Browser Underscore templates with HTML
           </h1>
         </div>
       </div>
@@ -37,6 +37,19 @@
       </div>
     </div>
   </div>
+  <script type="text/template" id="clients-template">
+    <ul>
+      <li>
+        <%_.forEach(clients, function (client,index) {%>
+          <%if (index>0) {%>
+      </li>
+      <li>
+        <%}%>
+          <%=transformations.getContactNameIdAndType(client)%>
+            <%})%>
+      </li>
+    </ul>
+  </script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="transformations.js"></script>
@@ -45,7 +58,7 @@
   <script src="propertyFormatter.js"></script>
   <script src="dataProvider.js"></script>
   <script src="clientRetriever.js"></script>
-  <script src="index.js"></script>
+  <script src="index-templates-html.js"></script>
 </body>
 
 </html>
