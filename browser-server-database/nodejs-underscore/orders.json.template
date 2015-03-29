@@ -1,0 +1,14 @@
+// Use the contents of this file on http://www.json-generator.com/ to generate random data
+[
+  '{{repeat(250)}}',
+  {
+    clientId: '{{index(1)}}',
+    orders: [
+      '{{repeat(1,6)}}',
+      {
+        bicycleName: '{{random("A fast bike", "An even faster bike", "A springy bike", "A springier bike", "An all-terain bike", "A classy bike", "A modern bike", "A commuter bike", "A blue bike", "A pink bike", "A noisy bike", "A clown bike")}}',
+        quantity: '{{integer(1,4)}}'
+      }
+    ]
+  }
+]
