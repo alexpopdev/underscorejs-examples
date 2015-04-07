@@ -1,35 +1,23 @@
-$(document).ready(function() {
+var _ = require("underscore");
+var clientRetriever = require("./clientRetriever.js");
+var transformations = require("./transformations.js");
 
-  var oldestClients = clientRetriever.getOldestClients(5);
-  var bestClients = clientRetriever.getBestClients(5);
-  var clients = clientRetriever.getClients();
+var oldestClients = clientRetriever.getOldestClients(5);
+var bestClients = clientRetriever.getBestClients(5);
+var clients = clientRetriever.getClients();
 
-  var onSelectHome = function() {
-    $(".panel-heading").html("Welcome");
-    $(".panel-body").html("<p>There are " + clients.length + " clients.</p>");
-  };
+console.log("There are " + clients.length + " clients.");
 
-  $("#home-btn").click(onSelectHome);
-
-  var clientsTemplate = _.template($("#clients-template").html());
-
-  $("#oldest-clients-btn").click(function() {
-    $(".panel-heading").html("Top 5 oldest clients with name, id and type");
-    var displayContent = clientsTemplate({
-      clients: oldestClients
-    });
-    $(".panel-body").html(
-      displayContent);
+var getContactsOutput = function(clients) {
+  var outputText = "";
+  _.forEach(clients, function(client, index) {
+    if (index > 0) {
+      outputText += ", ";
+    }
+    outputText += transformations.getContactNameIdAndType(client);
   });
-  $("#best-clients-btn").click(function() {
-    $(".panel-heading").html("Top 5 best clients with name, id and type");
+  return outputText;
+};
 
-    var displayContent = clientsTemplate({
-      clients: bestClients
-    });
-    $(".panel-body").html(
-      displayContent);
-  });
-
-  onSelectHome();
-});
+console.log("Top 5 oldest clients with name, id and type: " + getContactsOutput(oldestClients));
+console.log("Top 5 best clients with name, id and type: " + getContactsOutput(bestClients));
