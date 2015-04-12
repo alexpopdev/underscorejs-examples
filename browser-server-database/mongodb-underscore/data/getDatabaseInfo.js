@@ -8,4 +8,9 @@ _.each(db, function(value, key) {
 });
 print("Showing current database properties using tojson(): " + tojson(db));
 
-print('Collection list: ' + tojson(db.getCollectionNames()));
+var collectionNames = db.getCollectionNames();
+print('Collection list: ' + tojson(collectionNames));
+
+_.each(collectionNames, function(collectionName) {
+  print("Collection " + collectionName + " has " + db.getCollection(collectionName).count() + " documents.");
+});
