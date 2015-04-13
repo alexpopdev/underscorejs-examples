@@ -1,8 +1,6 @@
 db = db.getSiblingDB('underscorejs-examples');
 print("Current database is set to: " + tojson(db));
 
-load("node_modules/underscore/underscore.js");
-
 load("data/generateSeedData.js");
 
 if (db.bicycles.count() === 0) {
