@@ -1,3 +1,3 @@
 exports.getContactNameIdAndType = function(contact) {
-  return contact.name + " (" + contact.id + " - " + contact.type + ")";
+  return contact.name + " (" + contact._id + " - " + contact.type + ")";
 };
