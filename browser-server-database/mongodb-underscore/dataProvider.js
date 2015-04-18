@@ -1,4 +1,4 @@
-var MongoClient = require('mongodb').MongoClient
+var MongoClient = require('mongodb').MongoClient;
 var dbUrl = 'mongodb://localhost:27017/underscorejs-examples';
 
 var getBicycles = function(callback) {
