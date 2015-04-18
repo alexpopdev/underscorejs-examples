@@ -46,13 +46,13 @@ getClients = function(callback) {
 exports.getContacts = getContacts;
 exports.getClients = getClients;
 exports.getOldestClients = function(count, callback) {
-  getClients(function(clients){
-     var oldestClients = _.first(_.sortBy(clients, 'registered'), count);
-     callback(oldestClients);
+  getClients(function(clients) {
+    var oldestClients = _.first(_.sortBy(clients, 'registered'), count);
+    callback(oldestClients);
   });
 };
 exports.getBestClients = function(count, callback) {
-  getClients(function(clients){
+  getClients(function(clients) {
     var bestClients = _.first(_.sortBy(clients, 'bikePoints'), count);
     callback(bestClients);
   });
