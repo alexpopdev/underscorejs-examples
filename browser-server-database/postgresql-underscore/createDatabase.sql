@@ -1,0 +1,1 @@
+CREATE DATABASE underscorejs_examples;
