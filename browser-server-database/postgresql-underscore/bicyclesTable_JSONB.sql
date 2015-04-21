@@ -12,8 +12,12 @@ VALUES
         "rentPrice": 20,
         "dateAdded": "2015-02-02T00:00:00.000Z"
       }');
+
+SELECT 'Get bicycles:';
 SELECT * FROM bicycles;
-EXPLAIN SELECT converted.id, name, type, quantity, "rentPrice","dateAdded" from bicycles, jsonb_to_record(body) as
+
+SELECT 'Get bicycles as rows converted from jsonb with jsonb_to_record(body):';
+SELECT converted.id, name, type, quantity, "rentPrice","dateAdded" FROM bicycles, jsonb_to_record(body) AS
   converted (
     id int,
     name text,
@@ -21,4 +25,14 @@ EXPLAIN SELECT converted.id, name, type, quantity, "rentPrice","dateAdded" from 
     quantity smallint,
     "rentPrice" numeric,
     "dateAdded" timestamp);
+
+SELECT 'Get bicycles as rows converted from jsonb with field selectors:';
+SELECT  body->'id' AS id,
+        body->'name' AS name,
+        body->'type' AS type,
+        body->'quantity' AS quantity,
+        body->'rentPrice' AS rent_price,
+        (body->>'dateAdded')::timestamp AS date_added
+FROM bicycles;
+
 DROP TABLE bicycles;
