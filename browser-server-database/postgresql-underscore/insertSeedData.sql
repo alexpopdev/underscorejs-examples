@@ -3,16 +3,6 @@ CREATE TABLE IF NOT EXISTS bicycles(
    body jsonb not null
 );
 
-CREATE TABLE IF NOT EXISTS clients(
-   id int primary key,
-   body jsonb not null
-);
-
-CREATE TABLE IF NOT EXISTS client_orders(
-   id int primary key,
-   body jsonb not null
-);
-
 CREATE TABLE IF NOT EXISTS js_files(
     id varchar(255) primary key,
     content text not null
@@ -29,5 +19,28 @@ SELECT 'generateSeedData', :'generateseeddata_content' WHERE NOT EXISTS(SELECT i
 
 DO LANGUAGE plv8 $$
   var files = plv8.execute("SELECT content FROM js_files;");
-  plv8.elog(NOTICE,JSON.stringify(files));
+  for (var i = 0; i < files.length; i++)
+  {
+    var file = files[i].content;
+    eval("(function() { " + file + "})")();
+  }
+
+  //if (plv8.execute("SELECT COUNT(*) FROM bicycles;").count === 0) {
+    var bicycles = getBicycles();
+    plv8.elog(NOTICE,"Inserting " + bicycles.length + " bicycles ...");
+    var sqlScript = "INSERT INTO bicycles VALUES ";
+    _.each(bicycles, function (bicycle, index) {
+      if(index > 0) {
+        sqlScript += ", ";
+      }
+      sqlScript += "(" + bicycle.id + ", " + "'" + JSON.stringify(bicycle) + ")";
+    };
+    plv8.elog(NOTICE, sqlScript);z
+    plv8.execute(sqlScript + ";");
+  //} else {
+  //  plv8.elog(NOTICE,"The bicycles collection is not empty. Skipping seed data insertion for bicycles.");
+  //}
 $$;
+
+SELECT COUNT(*) FROM bicycles;
+SELECT TOP 5 * FROM bicyles;
