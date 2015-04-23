@@ -107,22 +107,22 @@ DO LANGUAGE plv8 $$
       rentPrice: 12,
       dateAdded: new Date(2014, 11, 1)
     }];
-    };
+  };
 
-    if (plv8.execute("SELECT COUNT(*) FROM bicycles;").count === 0) {
-      var bicycles = getBicycles();
-      plv8.elog(NOTICE,"Inserting " + bicycles.length + " bicycles ...");
-      var sqlScript = "INSERT INTO bicycles VALUES ";
-      _.each(bicycles, function (bicycle, index) {
-        if(index > 0) {
-          sqlScript += ", ";
-        }
-        sqlScript += "(" + bicycle.id + ", " + "'" + JSON.stringify(bicycle) + "')";
-      });
-      plv8.execute(sqlScript + ";");
-    } else {
-      plv8.elog(NOTICE,"The bicycles collection is not empty. Skipping seed data insertion for bicycles.");
-    }
+  if (plv8.execute("SELECT COUNT(*) FROM bicycles;")[0].count === 0) {
+    var bicycles = getBicycles();
+    plv8.elog(NOTICE,"Inserting " + bicycles.length + " bicycles ...");
+    var sqlScript = "INSERT INTO bicycles VALUES ";
+    _.each(bicycles, function (bicycle, index) {
+      if(index > 0) {
+        sqlScript += ", ";
+      }
+      sqlScript += "(" + bicycle.id + ", " + "'" + JSON.stringify(bicycle) + "')";
+    });
+    plv8.execute(sqlScript + ";");
+  } else {
+    plv8.elog(NOTICE,"The bicycles collection is not empty. Skipping seed data insertion for bicycles.");
+  }
 $$;
 
 SELECT COUNT(*) FROM bicycles;
