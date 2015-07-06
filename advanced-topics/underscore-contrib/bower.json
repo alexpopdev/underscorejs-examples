@@ -18,7 +18,7 @@
   "dependencies": {
     "jquery": "1.11.1",
     "underscore": "1.8.3",
-    "underscore-contrib": "~0.3.0"
+    "underscore-contrib": "0.3.0"
   },
   "devDependencies": {
     "jasmine": "2.0.2"
