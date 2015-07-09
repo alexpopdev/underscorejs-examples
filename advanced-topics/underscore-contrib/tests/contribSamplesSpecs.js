@@ -1,16 +1,15 @@
-describe("Given clientRetriever", function() {
+describe("Given contribSamples", function() {
 
-  describe("when calling getClientsUsingConstructorInfo() and getClientsUsingTypeProperty", function() {
-    var clientsForConstructorInfo = clientRetriever.getClientsUsingConstructorInfo();
-    var clientsForTypeProperty = clientRetriever.getClientsUsingTypeProperty();
+  describe("when calling concatenateArrays()", function() {
+    var result = contribSamples.concatenateArrays(1, [5, , 64], null, [5,6,7], [1, , 2, null, 3], 99);
 
-    it("then they both returns an array of the same correct length", function() {
-      expect(clientsForConstructorInfo).toBeTruthy();
-      expect(clientsForConstructorInfo.length).toEqual(121);
+    it("then it returns an array of the correct length", function() {
+      expect(result.length).toEqual(8);
+    });
 
-      expect(clientsForTypeProperty).toBeTruthy();
-      expect(clientsForTypeProperty.length).toEqual(121);
+    it("then it returns an array with the correct first and last element", function() {
+      expect(_.first(result)).toEqual(1);
+      expect(_.last(result)).toEqual(99);
     });
   });
-
 });

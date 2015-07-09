@@ -2,17 +2,14 @@ var contribSamples = (function() {
   "use strict";
 
   return {
-    getArrayFromArguments: function() {
-      var contacts = getContacts();
-      return _.filter(contacts, function(contact) {
-        return contact.constructor === Client;
-      });
-    },
-    getOldestClients: function(count) {
-      return _.first(_.sortBy(this.getClients(), 'registered'), count);
-    },
-    getBestClients: function(count) {
-      return _.first(_.sortBy(this.getClients(), 'bikePoints'), count);
+    concatenateArrays: function(args) {
+      var concatResult = _.cat.apply(this, arguments);
+      var filteredResult = _.chain(concatResult)
+                            .filter(_.existy)
+                            .sortBy(_.identity)
+                            .unique(true)
+                            .value();
+      return filteredResult;
     }
   };
 }());
