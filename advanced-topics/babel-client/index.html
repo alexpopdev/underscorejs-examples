@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Using Babel in the browser without transpilation</title>
+</head>
+
+<body>
+  <h1>Example output:</h1>
+  <script src="node_modules/babel-core/browser-polyfill.js"></script>
+  <script type="text/ecmascript-6">
+    class Greeter {
+      constructor(message) {
+        this.name = "Greeter";
+        this.message = message;
+      }
+      getMessage() {
+        return "Class " + this.name + " says: " + this.message;
+      }
+    }
+    class DerivedGreeter extends Greeter {
+      constructor(message) {
+        super("derived " + message);
+      }
+    }
+    let aGreeter = new DerivedGreeter("test");
+    let message = aGreeter.getMessage();
+    alert(message);
+  </script>
+</body>
+
+</html>
