@@ -3,11 +3,11 @@
 
 <head>
   <title>Using Babel in the browser without transpilation</title>
+  <script src="node_modules/babel-core/browser.js"></script>
 </head>
 
 <body>
   <h1>Example output:</h1>
-  <script src="node_modules/babel-core/browser-polyfill.js"></script>
   <script type="text/ecmascript-6">
     class Greeter {
       constructor(message) {
@@ -25,6 +25,7 @@
     }
     let aGreeter = new DerivedGreeter("test");
     let message = aGreeter.getMessage();
+    console.log(message);
     alert(message);
   </script>
 </body>
