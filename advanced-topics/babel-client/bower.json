@@ -1,5 +1,5 @@
 {
-  "name": "underscore.map.reduce-with-jasmine",
+  "name": "babel-client",
   "main": "index.js",
   "version": "0.0.0",
   "homepage": "https://github.com/popalexandruvasile/underscorejs-examples",
@@ -16,10 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.11.1",
-    "underscore": "1.7.0"
-  },
-  "devDependencies": {
-    "jasmine": "2.0.2"
+    "jquery": "~2.1.4"
   }
 }
