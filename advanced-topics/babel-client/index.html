@@ -3,6 +3,7 @@
 
 <head>
   <title>Using Babel in the browser without transpilation</title>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="node_modules/babel-core/browser.js"></script>
   <script src="node_modules/babel-core/browser-polyfill.js"></script>
 </head>
@@ -28,7 +29,7 @@
     let aGreeter = new DerivedGreeter("test");
     let message = aGreeter.getMessage();
     console.log(message);
-    alert(message);
+    $("#output").html(message);
   </script>
 </body>
 
