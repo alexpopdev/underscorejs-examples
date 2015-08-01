@@ -14,22 +14,22 @@
   <script type="text/ecmascript-6">
     class Greeter {
       constructor(message) {
-        this.name = "Greeter";
         this.message = message;
       }
       getMessage() {
-        return "Class " + this.name + " says: " + this.message;
+        return "An instance of class " + this.constructor.name + " says: " + this.message;
       }
     }
     class DerivedGreeter extends Greeter {
       constructor(message) {
-        super("derived " + message);
+        super(message + " !");
       }
     }
-    let aGreeter = new DerivedGreeter("test");
+    let aGreeter = new DerivedGreeter("Hello world");
     let message = aGreeter.getMessage();
-    console.log(message);
-    $("#output").html(message);
+
+    var aSet = new Set([10, 20, 30, 40, 50, 10, 20, 30]);
+    $("#output").html(message + "<br /> The example set size is " + aSet.size);
   </script>
 </body>
 
