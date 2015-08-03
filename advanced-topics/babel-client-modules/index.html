@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Using Babel in the browser with transpilation for multiple output files</title>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="node_modules/babel-core/browser.js"></script>
+  <script src="node_modules/babel-core/browser-polyfill.js"></script>
+  <script src="node_modules/es6-module-loader/dist/es6-module-loader.js"></script>
+</head>
+
+<body>
+  <h1>Example output:</h1>
+  <div id="output"></div>
+  <script type="module" src="es6/Greeter.js"></script>
+  <script type="module" src="es6/DerivedGreeter.js"></script>
+  <script type="module" src="es6/example.js"></script>
+  <script>
+    System.transpiler = 'babel';
+    // load index.js
+    System.import('es6/example.js').then(function(example) {
+      $("#output").html(example.getExampleOutput());
+    }).catch(function(e) {
+      console.error(e);
+    });
+  </script>
+</body>
+
+</html>
