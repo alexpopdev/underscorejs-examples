@@ -1,5 +1,5 @@
 /*jshint esnext: true */
-import DerivedGreeter from 'DerivedGreeter';
+import DerivedGreeter from './DerivedGreeter';
 
 export default function getExampleOutput() {
   let aGreeter = new DerivedGreeter("Hello world");

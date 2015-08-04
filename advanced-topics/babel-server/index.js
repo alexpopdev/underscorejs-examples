@@ -1,2 +1,4 @@
 require("babel/register");
-var example = require("./es6/example.js");
+var getExampleOutput = require("./es6/example");
+
+console.log(getExampleOutput());
