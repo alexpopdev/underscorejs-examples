@@ -4,6 +4,7 @@ require("babel/register")({
   only: /es6/
 });
 
-var getExampleOutput = require("./es6/example");
+var example = require("./es6/example");
+var getExampleOutput = example.default;
 
-console.log(getExampleOutput());
+console.log(example.name + " - " + getExampleOutput());
