@@ -3,6 +3,8 @@ import DerivedGreeter from './DerivedGreeter';
 
 import _ from "underscore";
 
+export let name = "example";
+
 export default function getExampleOutput() {
   let aGreeter = new DerivedGreeter("Hello world");
   let message = aGreeter.getMessage();

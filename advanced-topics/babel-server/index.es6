@@ -1,5 +1,8 @@
 /*jshint esnext: true */
 
-import getExampleOutput from './es6/example';
+import {
+  default as getExampleOutput, name
+}
+from './es6/example';
 
-console.log(getExampleOutput());
+console.log(name + " - " + getExampleOutput());
