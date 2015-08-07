@@ -1,7 +1,4 @@
 /*jshint esnext: true */
-
-import install from 'jasmine-es6';
-install();
 import * as examples from '../es6/examples';
 
 describe('examples', function() {
