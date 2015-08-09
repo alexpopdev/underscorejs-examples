@@ -6,10 +6,14 @@ export default class ArrayAccumulator {
   }
   addToArray(addedValue) {
     this.values.forEach((value, index) => {
-      if (value >= this.maxValue) {
+      if (value === this.maxValue) {
         return;
       }
+
       value += addedValue;
+      if (value > this.maxValue) {
+        value = maxValue;
+      }
       this.values[index] = value;
     });
   }
