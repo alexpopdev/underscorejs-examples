@@ -16,16 +16,12 @@ export function getSetSize() {
 }
 
 export function functionUsingRestOperator(argsNo, ...otherArgs) {
-  if (arguments.length !== argsNo) {
+  if (otherArgs.length + 1 !== argsNo) {
     return "Incorrect number of required arguments. Expected " + argsNo + " and " + arguments.length + " were supplied.";
   }
 
   if (arguments.length < 2) {
     return "Too few arguments were supplied.";
-  }
-
-  if (arguments.length !== otherArgs.length + 1) {
-    return "This line of code should never be reached.";
   }
 
   return arguments.length;

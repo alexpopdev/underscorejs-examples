@@ -21,6 +21,13 @@ describe('Given examples module', function() {
       });
     });
 
+    describe('with too few arguments', () => {
+      let result = examples.functionUsingRestOperator(1);
+      it('then returns the correct message', () => {
+        expect(result).toBe("Too few arguments were supplied.");
+      });
+    });
+
     describe('with correct number of arguments', () => {
       let result = examples.functionUsingRestOperator(4, {
         id: 1
