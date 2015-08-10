@@ -14,3 +14,19 @@ export function getSetSize() {
   var size = _.size(arrayFromSet);
   return "The example set size is: " + aSet.size + ". The example set size calculated with underscore is: " + size;
 }
+
+export function functionUsingRestOperator(argsNo, ...otherArgs) {
+  if (arguments.length !== argsNo) {
+    return "Incorrect number of required arguments. Expected " + argsNo + " and " + arguments.length + " were supplied.";
+  }
+
+  if (arguments.length < 1) {
+    return "Too few arguments were supplied.";
+  }
+
+  if (arguments.length !== otherArgs.length + 1) {
+    return "This line of code should never be reached.";
+  }
+
+  return arguments.length;
+}
