@@ -20,7 +20,7 @@ export function functionUsingRestOperator(argsNo, ...otherArgs) {
     return "Incorrect number of required arguments. Expected " + argsNo + " and " + arguments.length + " were supplied.";
   }
 
-  if (arguments.length < 1) {
+  if (arguments.length < 2) {
     return "Too few arguments were supplied.";
   }
 
