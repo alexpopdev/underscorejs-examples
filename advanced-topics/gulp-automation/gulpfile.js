@@ -26,3 +26,7 @@ gulp.task('open-tests', ['build-tests'], function() {
       app: 'firefox'
     }));
 });
+
+gulp.task('default', ['open-app', 'open-tests'], function() {
+  // using the default task to trigger all the other tasks for this project
+});
