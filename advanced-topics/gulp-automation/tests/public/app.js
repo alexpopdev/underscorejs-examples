@@ -43,7 +43,6 @@ var Client = (function() {
 
   return Client;
 }());
-
 var clientRetriever = (function() {
   "use strict";
 

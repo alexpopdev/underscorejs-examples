@@ -5,7 +5,7 @@ describe("Given Client class", function() {
       new Client(1, " A contact name");
     };
     it("then throws the correct exception", function() {
-      expect(createClient).toThrowError({
+      expect(createClient).toThrow({
         name: 'ArgumentsException',
         message: 'The arguments length is incorrect.'
       });
