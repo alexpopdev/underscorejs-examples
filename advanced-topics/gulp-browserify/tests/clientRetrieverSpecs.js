@@ -1,3 +1,4 @@
+var clientRetriever = require("../app/clientRetriever.js");
 describe("Given clientRetriever", function() {
 
   describe("when calling getContacts()", function() {

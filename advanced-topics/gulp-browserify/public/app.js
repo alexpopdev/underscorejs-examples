@@ -23,7 +23,7 @@ Client.prototype.constructor = Client;
 
 module.exports = Client;
 
-},{"./contact.js":3,"./validations.js":9,"underscore":11}],2:[function(require,module,exports){
+},{"./contact.js":3,"./validations.js":7,"underscore":9}],2:[function(require,module,exports){
 var _ = require("underscore");
 var dataProvider = require("./dataProvider.js");
 var Contact = require("./contact.js");
@@ -72,7 +72,7 @@ exports.getBestClients = function(count) {
   return _.first(_.sortBy(this.getClients(), 'bikePoints'), count);
 };
 
-},{"./client.js":1,"./contact.js":3,"./dataProvider.js":4,"underscore":11}],3:[function(require,module,exports){
+},{"./client.js":1,"./contact.js":3,"./dataProvider.js":4,"underscore":9}],3:[function(require,module,exports){
 var _ = require("underscore");
 var validations = require("./validations.js");
 
@@ -94,7 +94,7 @@ function Contact(id, name, gender, company, email, phone, address) {
 
 module.exports = Contact;
 
-},{"./validations.js":9,"underscore":11}],4:[function(require,module,exports){
+},{"./validations.js":7,"underscore":9}],4:[function(require,module,exports){
 var getBicycles = function() {
   return [{
     id: 1,
@@ -6753,97 +6753,12 @@ $(document).ready(function() {
 
   onSelectHome();
 });
-},{"./clientRetriever.js":2,"./transformations.js":8,"jquery":10,"underscore":11}],6:[function(require,module,exports){
-var _ = require("underscore");
-var clientRetriever = require("./clientRetriever.js");
-var transformations = require("./transformations.js");
-
-var oldestClients = clientRetriever.getOldestClients(5);
-var bestClients = clientRetriever.getBestClients(5);
-var clients = clientRetriever.getClients();
-
-console.log("There are " + clients.length + " clients.");
-
-var getContactsOutput = function(clients) {
-  var outputText = "";
-  _.forEach(clients, function(client, index) {
-    if (index > 0) {
-      outputText += ", ";
-    }
-    outputText += transformations.getContactNameIdAndType(client);
-  });
-  return outputText;
-};
-
-console.log("Top 5 oldest clients with name, id and type: " + getContactsOutput(oldestClients));
-console.log("Top 5 best clients with name, id and type: " + getContactsOutput(bestClients));
-
-},{"./clientRetriever.js":2,"./transformations.js":8,"underscore":11}],7:[function(require,module,exports){
-exports.extractPropertiesForDisplay = function(source, ignoreId) {
-  var propertiesForDisplay = [];
-  if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
-    return propertiesForDisplay;
-  }
-
-  _.each(_.pairs(source), function(keyValue) {
-    var isDate = typeof keyValue[1] === 'object' && keyValue[1] instanceof Date;
-    if (isDate || typeof keyValue[1] === 'boolean' || typeof keyValue[1] === 'number' ||
-      typeof keyValue[1] === 'string') {
-      propertiesForDisplay.push("Property: " + keyValue[0] + " of type: " + typeof keyValue[1] + " has value: " + keyValue[1]);
-    } else {
-      propertiesForDisplay.push("Property: " + keyValue[0] + " cannot be displayed.");
-    }
-  });
-
-  return propertiesForDisplay;
-};
-
-exports.extractDataPropertiesForDisplay = function(source, ignoreId) {
-  var propertiesForDisplay = [];
-  if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
-    return propertiesForDisplay;
-  }
-
-  var functionNames = _.functions(source);
-
-  _.each(_.pairs(source), function(keyValue) {
-    var isDate = typeof keyValue[1] === 'object' && keyValue[1] instanceof Date;
-    if (isDate || typeof keyValue[1] === 'boolean' || typeof keyValue[1] === 'number' ||
-      typeof keyValue[1] === 'string') {
-      propertiesForDisplay.push("Property: " + keyValue[0] + " of type: " + typeof keyValue[1] + " has value: " + keyValue[1]);
-    } else if (!_.contains(functionNames, keyValue[0])) {
-      propertiesForDisplay.push("Property: " + keyValue[0] + " cannot be displayed.");
-    }
-  });
-
-  return propertiesForDisplay;
-};
-
-exports.extractAllPropertiesForDisplay = function(source, ignoreId) {
-  if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
-    return [];
-  }
-
-  return _.reduce(source, function(memo, value, key) {
-      if (memo && memo !== "") {
-        memo += "<br/>";
-      }
-      var isDate = typeof value === 'object' && value instanceof Date;
-      if (isDate || typeof value === 'boolean' || typeof value === 'number' ||
-        typeof value === 'string') {
-        return memo + "Property: " + key + " of type: " + typeof value + " has value: " + value;
-      }
-      return memo + "Property: " + key + " cannot be displayed.";
-    },
-    "");
-};
-
-},{}],8:[function(require,module,exports){
+},{"./clientRetriever.js":2,"./transformations.js":6,"jquery":8,"underscore":9}],6:[function(require,module,exports){
 exports.getContactNameIdAndType = function(contact) {
   return contact.name + " (" + contact.id + " - " + contact.type + ")";
 };
 
-},{}],9:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var _ = require("underscore");
 
 var validations = {
@@ -6878,7 +6793,7 @@ var validations = {
 
 module.exports = validations;
 
-},{"underscore":11}],10:[function(require,module,exports){
+},{"underscore":9}],8:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -16090,7 +16005,7 @@ return jQuery;
 
 }));
 
-},{}],11:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -17640,4 +17555,4 @@ return jQuery;
   }
 }.call(this));
 
-},{}]},{},[1,2,3,4,5,6,7,8,9]);
+},{}]},{},[5]);

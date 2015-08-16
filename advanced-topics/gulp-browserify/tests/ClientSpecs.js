@@ -1,3 +1,4 @@
+var Client = require("../app/client.js");
 describe("Given Client class", function() {
 
   describe("when calling new Client() with too few arguments", function() {

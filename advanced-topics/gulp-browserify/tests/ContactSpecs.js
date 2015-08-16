@@ -1,3 +1,4 @@
+var Contact = require("../app/Contact.js");
 describe("Given Contact class", function() {
 
   describe("when calling new Contact() with too few arguments", function() {
