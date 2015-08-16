@@ -6,7 +6,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 
 gulp.task('build-app', function() {
-  browserify('./app/index_client.js')
+  return browserify('./app/index_client.js')
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./public/'));
@@ -14,7 +14,7 @@ gulp.task('build-app', function() {
 
 gulp.task('build-tests', function() {
   var specFiles = glob.sync('./spec/**/*Spec.js');
-  browserify({
+  return browserify({
       entries: specFiles
     })
     .bundle()
@@ -23,12 +23,12 @@ gulp.task('build-tests', function() {
 });
 
 gulp.task('open-app', ['build-app'], function() {
-  gulp.src('./index.html')
+  return gulp.src('./index.html')
     .pipe(open());
 });
 
 gulp.task('open-tests', ['build-tests'], function() {
-  gulp.src('./SpecRunner.html')
+  return gulp.src('./SpecRunner.html')
     .pipe(open({
       app: 'firefox'
     }));
