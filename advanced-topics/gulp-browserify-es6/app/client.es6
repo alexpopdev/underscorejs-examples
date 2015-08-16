@@ -1,8 +1,9 @@
-var _ = require("underscore");
-var Contact = require("./contact.js");
-var validations = require("./validations.js");
+/*jshint esnext: true */
+import _ from "underscore";
+import Contact from "./contact";
+import validations from "./validations";
 
-function Client(id, name, gender, company, email, phone, address, registered, preferredBike, bikePoints, notes) {
+export default function Client(id, name, gender, company, email, phone, address, registered, preferredBike, bikePoints, notes) {
   var argsArray = _.toArray(arguments);
 
   validations.validateArgsLength(11, argsArray);
@@ -19,5 +20,3 @@ function Client(id, name, gender, company, email, phone, address, registered, pr
 
 Client.prototype = Object.create(Contact.prototype);
 Client.prototype.constructor = Client;
-
-module.exports = Client;

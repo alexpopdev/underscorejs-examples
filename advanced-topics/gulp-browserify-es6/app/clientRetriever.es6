@@ -1,9 +1,10 @@
-var _ = require("underscore");
-var dataProvider = require("./dataProvider.js");
-var Contact = require("./contact.js");
-var Client = require("./client.js");
+/*jshint esnext: true */
+import _ from "underscore";
+import * as dataProvider from "./dataProvider";
+import Contact from "./contact";
+import Client from "./client";
 
-var getContacts = function() {
+export function getContacts() {
   var clientObjects = dataProvider.getClients();
   return _.map(clientObjects, function(clientObject) {
     if (!clientObject.isActive) {
@@ -30,18 +31,19 @@ var getContacts = function() {
       clientObject.notes
     );
   });
-};
+}
 
-exports.getContacts = getContacts;
-exports.getClients = function() {
+export function getClients() {
   var contacts = getContacts();
   return _.filter(contacts, function(contact) {
     return contact.constructor === Client;
   });
-};
-exports.getOldestClients = function(count) {
+}
+
+export function getOldestClients(count) {
   return _.first(_.sortBy(this.getClients(), 'registered'), count);
-};
-exports.getBestClients = function(count) {
+}
+
+export function getBestClients(count) {
   return _.first(_.sortBy(this.getClients(), 'bikePoints'), count);
-};
+}

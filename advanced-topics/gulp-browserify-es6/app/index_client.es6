@@ -1,7 +1,8 @@
-var $ = require('jquery');
-var _ = require("underscore");
-var clientRetriever = require("./clientRetriever.js");
-var transformations = require("./transformations.js");
+/*jshint esnext: true */
+import _ from "underscore";
+import * as $ from "jquery";
+import * as clientRetriever from "./clientRetriever";
+import * as transformations from "./transformations";
 
 $(document).ready(function() {
 

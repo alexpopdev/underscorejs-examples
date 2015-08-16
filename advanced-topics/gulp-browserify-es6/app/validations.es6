@@ -1,6 +1,7 @@
-var _ = require("underscore");
+/*jshint esnext: true */
+import _ from "underscore";
 
-var validations = {
+const validations = {
   validateArgsLength: function(argsLength, argsArray) {
     if (argsArray.length != argsLength) {
       throw {
@@ -30,4 +31,4 @@ var validations = {
   }
 };
 
-module.exports = validations;
+export default validations;

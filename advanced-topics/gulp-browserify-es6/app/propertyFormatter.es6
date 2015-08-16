@@ -1,4 +1,5 @@
-exports.extractPropertiesForDisplay = function(source, ignoreId) {
+/*jshint esnext: true */
+export function extractPropertiesForDisplay(source, ignoreId) {
   var propertiesForDisplay = [];
   if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
     return propertiesForDisplay;
@@ -15,9 +16,9 @@ exports.extractPropertiesForDisplay = function(source, ignoreId) {
   });
 
   return propertiesForDisplay;
-};
+}
 
-exports.extractDataPropertiesForDisplay = function(source, ignoreId) {
+export function extractDataPropertiesForDisplay(source, ignoreId) {
   var propertiesForDisplay = [];
   if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
     return propertiesForDisplay;
@@ -36,9 +37,9 @@ exports.extractDataPropertiesForDisplay = function(source, ignoreId) {
   });
 
   return propertiesForDisplay;
-};
+}
 
-exports.extractAllPropertiesForDisplay = function(source, ignoreId) {
+export function extractAllPropertiesForDisplay(source, ignoreId) {
   if (!source || (!ignoreId && source.id !== +source.id) || _.keys(source).length === 0) {
     return [];
   }
@@ -55,4 +56,4 @@ exports.extractAllPropertiesForDisplay = function(source, ignoreId) {
       return memo + "Property: " + key + " cannot be displayed.";
     },
     "");
-};
+}

@@ -1,4 +1,5 @@
-var getBicycles = function() {
+/*jshint esnext: true */
+export function getBicycles() {
   return [{
     id: 1,
     name: "A fast bike",
@@ -84,9 +85,9 @@ var getBicycles = function() {
     rentPrice: 12,
     dateAdded: new Date(2014, 11, 1)
   }];
-};
+}
 
-var getClients = function() {
+export function getClients() {
   return [{
     "id": 1,
     "name": "Baxter Brooks",
@@ -3338,9 +3339,9 @@ var getClients = function() {
     "isActive": true,
     "notes": "Enim excepteur sunt Lorem cupidatat laborum culpa in nostrud commodo et nisi excepteur adipisicing. Non anim est voluptate laboris sunt proident occaecat ut proident ipsum ea dolor magna. Consequat adipisicing ut magna et. Aliquip labore ad do consectetur tempor. Ullamco culpa enim pariatur ullamco dolore sint reprehenderit nostrud qui amet officia.\r\n"
   }];
-};
+}
 
-var getClientOrders = function() {
+export function getClientOrders() {
   return [{
     "clientId": 1,
     "orders": [{
@@ -6609,8 +6610,4 @@ var getClientOrders = function() {
       "quantity": 4
     }]
   }];
-};
-
-exports.getBicycles = getBicycles;
-exports.getClients = getClients;
-exports.getClientOrders = getClientOrders;
+}

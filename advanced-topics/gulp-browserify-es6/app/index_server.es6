@@ -1,6 +1,7 @@
-var _ = require("underscore");
-var clientRetriever = require("./clientRetriever.js");
-var transformations = require("./transformations.js");
+/*jshint esnext: true */
+import _ from "underscore";
+import * as clientRetriever from "./clientRetriever";
+import * as transformations from "./transformations";
 
 var oldestClients = clientRetriever.getOldestClients(5);
 var bestClients = clientRetriever.getBestClients(5);

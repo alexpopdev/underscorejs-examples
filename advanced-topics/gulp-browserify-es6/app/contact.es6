@@ -1,7 +1,8 @@
-var _ = require("underscore");
-var validations = require("./validations.js");
+/*jshint esnext: true */
+import _ from "underscore";
+import validations from "./validations";
 
-function Contact(id, name, gender, company, email, phone, address) {
+export default function Contact(id, name, gender, company, email, phone, address) {
   var argsArray = _.toArray(arguments);
 
   validations.validateArgsLength(7, argsArray);
@@ -16,5 +17,3 @@ function Contact(id, name, gender, company, email, phone, address) {
   this.address = address;
   this.type = "contact";
 }
-
-module.exports = Contact;
