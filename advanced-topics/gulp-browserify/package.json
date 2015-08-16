@@ -10,18 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.3.5",
-    "browserify": "^11.0.1",
-    "console-browserify": "^1.1.0",
     "jquery": "^2.1.4",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
+    "glob": "^5.0.14",
     "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-ignore": "^1.2.1",
     "gulp-open": "^1.0.0",
     "gulp-util": "^3.0.6",
-    "jasmine": "^2.3.2",
     "jasmine-core": "^2.3.4"
   }
 }

@@ -1,18 +1,25 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
 var open = require('gulp-open');
+var glob = require('glob');
 
-var appScripts = 'app/**/*.js';
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+
 gulp.task('build-app', function() {
-  gulp.src(appScripts)
-    .pipe(concat('app.js'))
+  browserify('./app/index_client.js')
+    .bundle()
+    .pipe(source('app.js'))
     .pipe(gulp.dest('./public/'));
 });
 
 gulp.task('build-tests', function() {
-  gulp.src([appScripts, '!app/index.js'])
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('./tests/public/'));
+  var specFiles = glob.sync('./spec/**/*Spec.js');
+  browserify({
+      entries: specFiles
+    })
+    .bundle()
+    .pipe(source('specs.js'))
+    .pipe(gulp.dest('./spec/output/'));
 });
 
 gulp.task('open-app', ['build-app'], function() {
