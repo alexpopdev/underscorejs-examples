@@ -151,7 +151,7 @@ var _underscore2 = _interopRequireDefault(_underscore);
 
 var _jquery = require("jquery");
 
-var $ = _interopRequireWildcard(_jquery);
+var _jquery2 = _interopRequireDefault(_jquery);
 
 var _clientRetrieverEs6 = require("./clientRetriever.es6");
 
@@ -161,33 +161,32 @@ var _transformationsEs6 = require("./transformations.es6");
 
 var transformations = _interopRequireWildcard(_transformationsEs6);
 
-$(function () {
-
+(0, _jquery2["default"])(function () {
   var oldestClients = clientRetriever.getOldestClients(5);
   var bestClients = clientRetriever.getBestClients(5);
   var clients = clientRetriever.getClients();
 
   var onSelectHome = function onSelectHome() {
-    $(".panel-heading").html("Welcome");
-    $(".panel-body").html("<p>There are " + clients.length + " clients.</p>");
+    (0, _jquery2["default"])(".panel-heading").html("Welcome");
+    (0, _jquery2["default"])(".panel-body").html("<p>There are " + clients.length + " clients.</p>");
   };
 
-  $("#home-btn").click(onSelectHome);
+  (0, _jquery2["default"])("#home-btn").click(onSelectHome);
 
-  $("#oldest-clients-btn").click(function () {
-    $(".panel-heading").html("Top 5 oldest clients with name, id and type");
+  (0, _jquery2["default"])("#oldest-clients-btn").click(function () {
+    (0, _jquery2["default"])(".panel-heading").html("Top 5 oldest clients with name, id and type");
     var displayContent = "<ul><li>" + _underscore2["default"].map(oldestClients, function (client) {
       return transformations.getContactNameIdAndType(client);
     }).join('</li><li>') + "</li></ul>";
-    $(".panel-body").html(displayContent);
+    (0, _jquery2["default"])(".panel-body").html(displayContent);
   });
-  $("#best-clients-btn").click(function () {
-    $(".panel-heading").html("Top 5 best clients with name, id and type");
+  (0, _jquery2["default"])("#best-clients-btn").click(function () {
+    (0, _jquery2["default"])(".panel-heading").html("Top 5 best clients with name, id and type");
 
     var displayContent = "<ul><li>" + _underscore2["default"].map(bestClients, function (client) {
       return transformations.getContactNameIdAndType(client);
     }).join('</li><li>') + "</li></ul>";
-    $(".panel-body").html(displayContent);
+    (0, _jquery2["default"])(".panel-body").html(displayContent);
   });
 
   onSelectHome();
