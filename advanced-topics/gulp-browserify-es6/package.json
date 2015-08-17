@@ -19,6 +19,7 @@
     "gulp": "^3.9.0",
     "gulp-open": "^1.0.0",
     "gulp-util": "^3.0.6",
-    "jasmine-core": "^2.3.4"
+    "jasmine-core": "^2.3.4",
+    "jasmine-es6": "0.0.17"
   }
 }
