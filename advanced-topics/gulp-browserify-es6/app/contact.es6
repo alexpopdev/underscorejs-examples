@@ -1,6 +1,6 @@
 /*jshint esnext: true */
 import _ from "underscore";
-import validations from "./validations";
+import validations from "./validations.es6";
 
 export default function Contact(id, name, gender, company, email, phone, address) {
   var argsArray = _.toArray(arguments);

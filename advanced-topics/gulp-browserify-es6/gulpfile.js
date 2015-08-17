@@ -4,9 +4,11 @@ var glob = require('glob');
 
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var babelify = require('babelify');
 
 gulp.task('build-app', function() {
-  return browserify('./app/index_client.js')
+  return browserify('./app/index_client.es6')
+    .transform(babelify)
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./public/'));

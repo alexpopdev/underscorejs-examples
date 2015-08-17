@@ -1,8 +1,8 @@
 /*jshint esnext: true */
 import _ from "underscore";
-import * as dataProvider from "./dataProvider";
-import Contact from "./contact";
-import Client from "./client";
+import * as dataProvider from "./dataProvider.es6";
+import Contact from "./contact.es6";
+import Client from "./client.es6";
 
 export function getContacts() {
   var clientObjects = dataProvider.getClients();

@@ -1,10 +1,10 @@
 /*jshint esnext: true */
 import _ from "underscore";
 import * as $ from "jquery";
-import * as clientRetriever from "./clientRetriever";
-import * as transformations from "./transformations";
+import * as clientRetriever from "./clientRetriever.es6";
+import * as transformations from "./transformations.es6";
 
-$(document).ready(function() {
+$(function() {
 
   var oldestClients = clientRetriever.getOldestClients(5);
   var bestClients = clientRetriever.getBestClients(5);
