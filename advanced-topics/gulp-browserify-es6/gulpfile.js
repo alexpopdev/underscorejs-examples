@@ -15,10 +15,11 @@ gulp.task('build-app', function() {
 });
 
 gulp.task('build-tests', function() {
-  var specFiles = glob.sync('./spec/**/*Spec.js');
+  var specFiles = glob.sync('./spec/**/*Spec.es6');
   return browserify({
       entries: specFiles
     })
+    .transform(babelify)
     .bundle()
     .pipe(source('specs.js'))
     .pipe(gulp.dest('./spec/output/'));
