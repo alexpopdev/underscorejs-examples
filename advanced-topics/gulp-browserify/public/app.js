@@ -6718,7 +6718,7 @@ var _ = require("underscore");
 var clientRetriever = require("./clientRetriever.js");
 var transformations = require("./transformations.js");
 
-$(document).ready(function() {
+$(function() {
 
   var oldestClients = clientRetriever.getOldestClients(5);
   var bestClients = clientRetriever.getBestClients(5);
