@@ -9,9 +9,9 @@ var clients = clientRetriever.getClients();
 
 console.log("There are " + clients.length + " clients.");
 
-var getContactsOutput = function(clients) {
+var getContactsOutput = (clients) => {
   var outputText = "";
-  _.forEach(clients, function(client, index) {
+  _.forEach(clients, (client, index) => {
     if (index > 0) {
       outputText += ", ";
     }
