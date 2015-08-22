@@ -4,14 +4,14 @@
 <head>
   <title>Getting started - starter example with Underscore.find</title>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 </head>
 
 <body>
   <div>Example output:</div>
   <div id="output"></div>
   <script>
-  var bicycles = [{
+    var bicycles = [{
       name: "A fast bike",
       type: "Road Bike"
     }, {
@@ -49,15 +49,13 @@
     var getBicyclesCountPerType = function() {
       var bicyclesCountPerType = [];
       bicycles.forEach(function(bicycle) {
-        var currentTypeCount = _.find(bicyclesCountPerType, function(typeCount){
+        var currentTypeCount = _.find(bicyclesCountPerType, function(typeCount) {
           return typeCount.type === bicycle.type;
         });
 
         if (currentTypeCount) {
           currentTypeCount.count += 1;
-        }
-        else
-        {
+        } else {
           bicyclesCountPerType.push({
             type: bicycle.type,
             count: 1
