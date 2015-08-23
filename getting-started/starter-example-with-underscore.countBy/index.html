@@ -4,7 +4,7 @@
 <head>
   <title>Getting started - starter example with Underscore.countBy</title>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 </head>
 
 <body>
@@ -47,17 +47,19 @@
     }];
 
     $(document).ready(function() {
-      $("#output").html("There are " + bicycles.length + " bicycles:");
-      var result = _.countBy(bicycles, function(bicycle){
+      var outputContent = "There are " + bicycles.length + " bicycles:"
+
+      var result = _.countBy(bicycles, function(bicycle) {
         return bicycle.type;
       });
       _.pairs(result).forEach(function(typeCountPair) {
         var key = typeCountPair[0];
         var value = typeCountPair[1];
-        var existingContent = $("#output").html();
-        var newContent = " - " + value + " of type: " + key;
-        $("#output").html(existingContent + "<br />" + newContent);
+        outputContent += "<br />";
+        outputContent += " - " + value + " of type: " + key;
       });
+
+      $("#output").html(outputContent);
     });
   </script>
 </body>
