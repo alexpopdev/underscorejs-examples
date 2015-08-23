@@ -46,9 +46,10 @@
         };
       });
 
-      var averageAwardAge = _.reduce(peopleWithAwardAge, function(memo, person) {
+      var totalAge = _.reduce(peopleWithAwardAge, function(memo, person) {
         return memo + person.awardAge;
-      }, 0) / peopleWithAwardAge.length;
+      }, 0);
+      var averageAwardAge = totalAge / peopleWithAwardAge.length;
 
       var outputContent = "<br />Award age for people:";
       _.each(peopleWithAwardAge, function(person) {
