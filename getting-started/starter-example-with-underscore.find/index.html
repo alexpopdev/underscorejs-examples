@@ -67,13 +67,14 @@
     };
 
     $(document).ready(function() {
-      $("#output").html("There are " + bicycles.length + " bicycles:");
+      var outputContent = "There are " + bicycles.length + " bicycles:"
       var results = getBicyclesCountPerType();
       results.forEach(function(typeCount) {
-        var existingContent = $("#output").html();
-        var newContent = " - " + typeCount.count + " of type: " + typeCount.type;
-        $("#output").html(existingContent + "<br />" + newContent);
+        outputContent += "<br />";
+        outputContent += " - " + typeCount.count + " of type: " + typeCount.type;
       });
+
+      $("#output").html(outputContent);
     });
   </script>
 </body>
