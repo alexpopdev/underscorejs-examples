@@ -1,10 +1,10 @@
 describe("awardAgeCalculator", function() {
 
-  describe("when calling getPeopleWithAwardAge()", function() {
+  describe("when calling calculateAwardAgeForPeople()", function() {
     var peopleWithAwardAge;
 
     beforeEach(function() {
-      peopleWithAwardAge = awardAgeCalculator.getPeopleWithAwardAge(awardAgeCalculator.getPeople);
+      peopleWithAwardAge = awardAgeCalculator.calculateAwardAgeForPeople(awardAgeCalculator.getPeople());
     });
 
     it("then the award age for the first person should be correct", function() {
@@ -18,8 +18,8 @@ describe("awardAgeCalculator", function() {
     });
   });
 
-  describe("when calling getAverageAwardAge()", function() {
-    var aveargeAwardAge = awardAgeCalculator.getAverageAwardAge(awardAgeCalculator.getPeople);
+  describe("when calling getAverageAwardAgeForPeople()", function() {
+    var aveargeAwardAge = awardAgeCalculator.getAverageAwardAgeForPeople(awardAgeCalculator.getPeople());
 
     it("then the average award age should be correct", function() {
       expect(Math.floor(aveargeAwardAge)).toEqual(69);

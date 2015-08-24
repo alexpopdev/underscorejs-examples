@@ -1,10 +1,11 @@
 $(document).ready(function() {
-  $("#output").html("<br />Award age for people:");
+  var outputContent = "<br />Award age for people:";
   _.each(awardAgeCalculator.getPeopleWithAwardAge(), function(person) {
-    var existingContent = $("#output").html();
-    var newContent = " - " + person.name + " was " + person.awardAge + " years old";
-    $("#output").html(existingContent + "<br />" + newContent);
+    outputContent += "<br />";
+    outputContent += " - " + person.name + " was " + person.awardAge + " years old";
   });
 
-  $("#output").html($("#output").html() + "<br /><br />" + "Average award age is " + Math.floor(awardAgeCalculator.getAverageAwardAge()) + " years old.");
+  var averageAwardAge = Math.floor(awardAgeCalculator.getAverageAwardAge());
+  outputContent += "<br /><br />" + "Average award age is " + averageAwardAge + " years old.";
+  $("#output").html(outputContent);
 });

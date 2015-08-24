@@ -16,10 +16,10 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.11.1",
-    "underscore": "1.7.0"
+    "jquery": "2.1.4",
+    "underscore": "1.8.3"
   },
   "devDependencies": {
-    "jasmine": "2.0.2"
+    "jasmine": "2.3.4"
   }
 }
