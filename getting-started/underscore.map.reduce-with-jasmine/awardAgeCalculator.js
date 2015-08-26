@@ -29,20 +29,18 @@ var awardAgeCalculator = (function() {
     }];
   };
 
-  var calculateAwardAgeForPeople = function(people) {
-    return _.map(people, function(person) {
-      return {
-        name: person.name,
-        awardAge: person.awardYear - person.birthYear
-      };
-    });
-  };
-
   return {
     getPeople: getPeople,
-    calculateAwardAgeForPeople: calculateAwardAgeForPeople,
+    calculateAwardAgeForPeople: function(people) {
+      return _.map(people, function(person) {
+        return {
+          name: person.name,
+          awardAge: person.awardYear - person.birthYear
+        };
+      });
+    },
     getAverageAwardAgeForPeople: function(people) {
-      var peopleWithAwardAge = calculateAwardAgeForPeople(people);
+      var peopleWithAwardAge = this.calculateAwardAgeForPeople(people);
       return _.reduce(peopleWithAwardAge, function(memo, person) {
         return memo + person.awardAge;
       }, 0) / peopleWithAwardAge.length;
