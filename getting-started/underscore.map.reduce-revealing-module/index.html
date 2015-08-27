@@ -40,7 +40,7 @@
         }];
       };
 
-      var getPeopleWithAwardAge = function() {
+      var innerGetPeopleWithAwardAge = function() {
         return _.map(getPeople(), function(person) {
           return {
             name: person.name,
@@ -50,9 +50,9 @@
       };
 
       return {
-        getPeopleWithAwardAge: getPeopleWithAwardAge,
+        getPeopleWithAwardAge: innerGetPeopleWithAwardAge,
         getAverageAwardAge: function() {
-          var peopleWithAwardAge = getPeopleWithAwardAge();
+          var peopleWithAwardAge = innerGetPeopleWithAwardAge();
           var totalAwardAge = _.reduce(peopleWithAwardAge, function(memo, person) {
             return memo + person.awardAge;
           }, 0);
