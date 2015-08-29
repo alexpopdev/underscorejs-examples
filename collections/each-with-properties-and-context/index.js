@@ -14,12 +14,12 @@ $(document).ready(function() {
   };
 
   var storableProperties = propertyExtractor.extractStorableProperties(source);
+  var outputContent = "<br />Object properties:";
 
-  $("#output").html("<br />Object properties:");
-
-  _.each(storableProperties, function(value, key, list){
-    var existingContent = $("#output").html();
-    var newContent = "Property: " + key + " of type: " + typeof value + " has value: " + value;
-    $("#output").html(existingContent + "<br />" + newContent);
+  _.each(storableProperties, function(value, key, list) {
+    outputContent += "<br />";
+    outputContent += "Property: " + key + " of type: " + typeof value + " has value: " + value;
   });
+
+  $("#output").html(outputContent);
 });

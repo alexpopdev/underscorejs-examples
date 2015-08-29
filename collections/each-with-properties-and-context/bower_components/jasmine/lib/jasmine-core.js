@@ -1,29 +1,37 @@
 module.exports = require("./jasmine-core/jasmine.js");
 module.exports.boot = require('./jasmine-core/node_boot.js');
 
-module.exports.files = (function() {
-  var path = require('path'),
-      fs = require('fs'),
-      glob = require('glob');
+var path = require('path'),
+    fs = require('fs');
 
-  var rootPath = path.join(__dirname, "jasmine-core"),
-      bootFiles = ['boot.js'],
-      nodeBootFiles = ['node_boot.js'];
+var rootPath = path.join(__dirname, "jasmine-core"),
+    bootFiles = ['boot.js'],
+    nodeBootFiles = ['node_boot.js'],
+    cssFiles = [],
+    jsFiles = [],
+    jsFilesToSkip = ['jasmine.js'].concat(bootFiles, nodeBootFiles);
 
-  var cssFiles = glob.sync(path.join(rootPath, '*.css')).map(path.basename);
-  var jsFiles = glob.sync(path.join(rootPath, '*.js')).map(path.basename);
+fs.readdirSync(rootPath).forEach(function(file) {
+  if(fs.statSync(path.join(rootPath, file)).isFile()) {
+    switch(path.extname(file)) {
+      case '.css':
+        cssFiles.push(file);
+      break;
+      case '.js':
+        if (jsFilesToSkip.indexOf(file) < 0) {
+        jsFiles.push(file);
+      }
+      break;
+    }
+  }
+});
 
-  ['jasmine.js'].concat(bootFiles, nodeBootFiles).forEach(function(file) {
-    jsFiles.splice(jsFiles.indexOf(file), 1);
-  });
-
-  return {
-    path: rootPath,
-    bootDir: rootPath,
-    bootFiles: bootFiles,
-    nodeBootFiles: nodeBootFiles,
-    cssFiles: cssFiles,
-    jsFiles: ['jasmine.js'].concat(jsFiles),
-    imagesDir: path.join(__dirname, '../images')
-  };
-}());
+module.exports.files = {
+  path: rootPath,
+  bootDir: rootPath,
+  bootFiles: bootFiles,
+  nodeBootFiles: nodeBootFiles,
+  cssFiles: cssFiles,
+  jsFiles: ['jasmine.js'].concat(jsFiles),
+  imagesDir: path.join(__dirname, '../images')
+};
