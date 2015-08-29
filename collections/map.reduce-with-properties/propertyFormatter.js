@@ -2,7 +2,7 @@ var propertyFormatter = (function() {
   "use strict";
 
   return {
-    extractPropertiesForDisplay: function(source) {
+    extractPropertiesForDisplayAsArray: function(source) {
       if (!source || source.id !== +source.id) {
         return [];
       }
@@ -16,7 +16,7 @@ var propertyFormatter = (function() {
         return "Property: " + key + " cannot be displayed.";
       });
     },
-    extractAllPropertiesForDisplay: function(source) {
+    extractPropertiesForDisplayAsString: function(source) {
       if (!source || source.id !== +source.id) {
         return [];
       }
