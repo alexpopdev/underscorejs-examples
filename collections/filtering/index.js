@@ -2,17 +2,17 @@ $(document).ready(function() {
 
   var bicycles = bicycleFinder.filterBicycles("Urban Bike", 16);
 
-  var displayContent = null;
+  var outputContent = null;
   _.each(bicycles, function(bicycle) {
-    if (displayContent) {
-      displayContent += "<br/><br/>";
+    if (outputContent) {
+      outputContent += "<br/><br/>";
     } else {
-      displayContent = "";
+      outputContent = "";
     }
-    displayContent += propertyFormatter.extractAllPropertiesForDisplay(bicycle);
+    outputContent += propertyFormatter.extractPropertiesForDisplayAsString(bicycle);
   });
 
   $("#output").html(
     "<h2>Filtered bicycles properties:</h2>" +
-    displayContent);
+    outputContent);
 });
