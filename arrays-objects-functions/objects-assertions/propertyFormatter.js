@@ -2,7 +2,7 @@ var propertyFormatter = (function() {
   "use strict";
 
   return {
-    extractPropertiesForDisplay: function(source, ignoreId) {
+    extractPropertiesForDisplayAsArray: function(source, ignoreId) {
       var propertiesForDisplay = [];
       if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return propertiesForDisplay;
@@ -20,7 +20,7 @@ var propertyFormatter = (function() {
 
       return propertiesForDisplay;
     },
-    extractDataPropertiesForDisplay: function(source, ignoreId) {
+    extractDataPropertiesForDisplayAsArray: function(source, ignoreId) {
       var propertiesForDisplay = [];
       if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return propertiesForDisplay;
@@ -39,7 +39,7 @@ var propertyFormatter = (function() {
       return propertiesForDisplay;
     },
 
-    extractAllPropertiesForDisplay: function(source, ignoreId) {
+    extractPropertiesForDisplayAsString: function(source, ignoreId) {
       if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return [];
       }

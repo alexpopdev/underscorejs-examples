@@ -13,21 +13,21 @@ $(document).ready(function() {
     }
   };
 
-  var propertiesForDisplay = propertyFormatter.extractPropertiesForDisplay(source);
+  var propertiesForDisplay = propertyFormatter.extractPropertiesForDisplayAsArray(source);
 
-  $("#output").html("<h2>Object properties using propertyFormatter.extractPropertiesForDisplay:</h2>");
+  $("#output").html("<h2>Object properties using propertyFormatter.extractDataPropertiesForDisplayAsArray:</h2>");
 
   _.each(propertiesForDisplay, function(line) {
     var existingContent = $("#output").html();
     $("#output").html(existingContent + "<br />" + line);
   }, source);
 
-  var allPropertiesForDisplay = propertyFormatter.extractAllPropertiesForDisplay(source);
+  var allPropertiesForDisplay = propertyFormatter.extractPropertiesForDisplayAsString(source);
 
   var outputContent = $("#output").html();
   $("#output").html(
     outputContent +
-    "<h2>Object properties using propertyFormatter.extractAllPropertiesForDisplay:</h2>" +
+    "<h2>Object properties using propertyFormatter.extractPropertiesForDisplayAsString:</h2>" +
     allPropertiesForDisplay);
 
 });
