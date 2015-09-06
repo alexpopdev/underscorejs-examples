@@ -14,7 +14,7 @@ $(document).ready(function() {
   };
 
   var extractPropertiesForDisplayWithFinalPropertiesCount = _.wrap(
-    propertyFormatter.extractPropertiesForDisplay,
+    propertyFormatter.extractPropertiesForDisplayAsArray,
     function(func) {
       return function() {
         var result = func.apply(this, arguments);
@@ -25,19 +25,19 @@ $(document).ready(function() {
 
   var propertiesForDisplay = extractPropertiesForDisplayWithFinalPropertiesCount(source);
 
-  $("#output").html("<h2>Object properties using a _.wrap version of propertyFormatter.extractPropertiesForDisplay:</h2>");
+  $("#output").html("<h2>Object properties using a _.wrap version of propertyFormatter.extractPropertiesForDisplayAsArray:</h2>");
 
   _.each(propertiesForDisplay, function(line) {
     var existingContent = $("#output").html();
     $("#output").html(existingContent + "<br />" + line);
   });
 
-  var allPropertiesForDisplay = propertyFormatter.extractAllPropertiesForDisplay(source);
+  var allPropertiesForDisplay = propertyFormatter.extractPropertiesForDisplayAsString(source);
 
   var outputContent = $("#output").html();
   $("#output").html(
     outputContent +
-    "<h2>Object properties using propertyFormatter.extractAllPropertiesForDisplay:</h2>" +
+    "<h2>Object properties using propertyFormatter.extractPropertiesForDisplayAsString:</h2>" +
     allPropertiesForDisplay);
 
 });

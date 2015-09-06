@@ -1,7 +1,7 @@
 var propertyFormatter = (function() {
   "use strict";
 
-  var extractDataPropertiesForDisplay = function(source, ignoreId) {
+  var extractDataPropertiesForDisplayAsArray = function(source, ignoreId) {
     var propertiesForDisplay = [];
     if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
       return propertiesForDisplay;
@@ -20,10 +20,10 @@ var propertyFormatter = (function() {
     return propertiesForDisplay;
   };
 
-  var extractDataPropertiesForDisplayForAnyObject = _.partial(extractDataPropertiesForDisplay, _, true);
+  var extractDataPropertiesForDisplayForAnyObject = _.partial(extractDataPropertiesForDisplayAsArray, _, true);
 
   return {
-    extractPropertiesForDisplay: function(source, ignoreId) {
+    extractPropertiesForDisplayAsArray: function(source, ignoreId) {
       var propertiesForDisplay = [];
       if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return propertiesForDisplay;
@@ -41,9 +41,9 @@ var propertyFormatter = (function() {
 
       return propertiesForDisplay;
     },
-    extractDataPropertiesForDisplay: extractDataPropertiesForDisplay,
+    extractDataPropertiesForDisplayAsArray: extractDataPropertiesForDisplayAsArray,
     extractDataPropertiesForDisplayForAnyObject: extractDataPropertiesForDisplayForAnyObject,
-    extractAllPropertiesForDisplay: function(source, ignoreId) {
+    extractPropertiesForDisplayAsString: function(source, ignoreId) {
       if (_.isNull(source) || _.isUndefined(source) || _.isEmpty(source) || (!ignoreId && !_.isNumber(source.id))) {
         return [];
       }
