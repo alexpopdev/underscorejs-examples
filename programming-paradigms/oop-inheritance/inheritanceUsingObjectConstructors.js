@@ -1,3 +1,4 @@
+/* jshint proto: true */
 (function() {
   "use strict";
   var exampleTitle = "Inheritance using object constructors - ";
