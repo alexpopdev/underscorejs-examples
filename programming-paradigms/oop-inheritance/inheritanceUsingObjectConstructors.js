@@ -28,6 +28,8 @@
   );
 
   console.log(exampleTitle + "Assert that [[Prototype]] for 'contact' instance is the object constructor prototype: " + (contact.__proto__ === Contact.prototype));
+  var assertContactIsInstanceOfContact = contact instanceof Contact;
+  console.log(exampleTitle + "Assert that 'contact' is an instance of Contact: " + assertContactIsInstanceOfContact);
 
   function Client(id, name, gender, email, registered, isActive) {
     Contact.call(this, id, name, gender, email);
@@ -49,6 +51,9 @@
   );
 
   console.log(exampleTitle + "Assert that [[Prototype]] for 'client' inherits from the [[Prototype]] for 'contact': " + (client.__proto__.__proto__ === contact.__proto__));
+
+  var assertClientIsInstanceOfContact = client instanceof Contact;
+  console.log(exampleTitle + "Assert that 'client' is an instance of Contact: " + assertClientIsInstanceOfContact);
 
   Contact.prototype.getContactIdAndName = function() {
     return this.name + " (" + this.id + ")";
