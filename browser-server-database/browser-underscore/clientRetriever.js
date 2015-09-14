@@ -35,7 +35,7 @@ var clientRetriever = (function() {
     getClients: function() {
       var contacts = getContacts();
       return _.filter(contacts, function(contact) {
-        return contact.constructor === Client;
+        return contact instanceof Client;
       });
     },
     getOldestClients: function(count) {
