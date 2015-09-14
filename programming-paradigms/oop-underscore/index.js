@@ -9,7 +9,7 @@ $(document).ready(function() {
     }).join('</li><li>') +
     "</li></ul>";
 
-  var clients = clientRetriever.getClientsUsingConstructorInfo();
+  var clients = clientRetriever.getClientsUsingInstanceof();
   displayContent += "There are " + clients.length + " active clients.<br />";
   $("#output").html(
     "<h2>OOP with Underscore examples:</h2>" +
