@@ -38,10 +38,16 @@ var clientRetriever = (function() {
         return contact.type === "client";
       });
     },
-    getClientsUsingConstructorInfo: function() {
+    getClientsUsingConstructorType: function() {
       var contacts = getContacts();
       return _.filter(contacts, function(contact) {
         return contact.constructor === Client;
+      });
+    },
+    getClientsUsingInstanceof: function() {
+      var contacts = getContacts();
+      return _.filter(contacts, function(contact) {
+        return contact instanceof Client;
       });
     }
   };
