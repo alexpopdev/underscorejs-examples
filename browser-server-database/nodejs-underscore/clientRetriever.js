@@ -1,7 +1,7 @@
 var _ = require("underscore");
-var dataProvider = require("./dataProvider.js");
-var Contact = require("./contact.js");
-var Client = require("./client.js");
+var dataProvider = require("./dataProvider");
+var Contact = require("./contact");
+var Client = require("./client");
 
 var getContacts = function() {
   var clientObjects = dataProvider.getClients();
@@ -36,7 +36,7 @@ exports.getContacts = getContacts;
 exports.getClients = function() {
   var contacts = getContacts();
   return _.filter(contacts, function(contact) {
-    return contact.constructor === Client;
+    return contact instanceof Client;
   });
 };
 exports.getOldestClients = function(count) {

@@ -1,6 +1,6 @@
 var _ = require("underscore");
-var Contact = require("./contact.js");
-var validations = require("./validations.js");
+var Contact = require("./contact");
+var validations = require("./validations");
 
 function Client(id, name, gender, company, email, phone, address, registered, preferredBike, bikePoints, notes) {
   var argsArray = _.toArray(arguments);
