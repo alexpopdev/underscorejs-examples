@@ -1,4 +1,4 @@
-var Contact = require("../contact.js");
+var Contact = require("../contact");
 
 describe("Given Contact class", function() {
 

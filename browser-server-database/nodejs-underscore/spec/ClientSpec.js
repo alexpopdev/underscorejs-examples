@@ -1,4 +1,4 @@
-var Client = require("../client.js");
+var Client = require("../client");
 
 describe("Given Client class", function() {
 
