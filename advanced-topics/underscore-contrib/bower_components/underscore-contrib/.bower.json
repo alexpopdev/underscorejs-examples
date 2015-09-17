@@ -32,7 +32,6 @@
     "commit": "c5ab24b8d3cf80d9c7ead639199f94b81adb95ce"
   },
   "_source": "git://github.com/documentcloud/underscore-contrib.git",
-  "_target": "~0.3.0",
-  "_originalSource": "underscore-contrib",
-  "_direct": true
+  "_target": "0.3.0",
+  "_originalSource": "underscore-contrib"
 }
