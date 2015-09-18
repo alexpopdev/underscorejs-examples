@@ -1,0 +1,26 @@
+{
+  "name": "underscorejs-examples",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/popalexandruvasile/underscorejs-examples",
+  "authors": [
+    "Alex Pop <palexandru@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "underscore": "1.8.3",
+    "underscore-contrib": "0.3.0"
+  },
+  "devDependencies": {
+    "jasmine": "2.3.4"
+  }
+}

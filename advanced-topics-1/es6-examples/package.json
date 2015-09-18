@@ -1,0 +1,18 @@
+{
+  "name": "es6-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel": "^5.8.21",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "jasmine-es6": "0.0.16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

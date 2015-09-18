@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Using Babel in the browser without transpilation</title>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="node_modules/babel-core/browser.js"></script>
+  <script src="node_modules/babel-core/browser-polyfill.js"></script>
+</head>
+
+<body>
+  <h1>Example output:</h1>
+  <div id="output"></div>
+  <script type="text/ecmascript-6">
+    class Greeter {
+      constructor(message) {
+        this.message = message;
+      }
+      getMessage() {
+        return "An instance of class " + this.constructor.name + " says: " + this.message;
+      }
+    }
+    class DerivedGreeter extends Greeter {
+      constructor(message) {
+        super(message + " !");
+      }
+    }
+    let aGreeter = new DerivedGreeter("Hello world");
+    let message = aGreeter.getMessage();
+
+    var aSet = new Set([10, 20, 30, 40, 50, 10, 20, 30]);
+    $("#output").html(message + "<br /> The example set size is " + aSet.size);
+  </script>
+</body>
+
+</html>

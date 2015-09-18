@@ -1,0 +1,23 @@
+{
+  "name": "gulp-browserify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "glob": "^5.0.14",
+    "gulp": "^3.9.0",
+    "gulp-open": "^1.0.0",
+    "gulp-util": "^3.0.6",
+    "jasmine-core": "^2.3.4"
+  }
+}
