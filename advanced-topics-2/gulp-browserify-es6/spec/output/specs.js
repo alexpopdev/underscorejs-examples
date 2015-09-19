@@ -122,7 +122,7 @@ function getContacts() {
 function getClients() {
   var contacts = getContacts();
   return _underscore2["default"].filter(contacts, function (contact) {
-    return contact.constructor === _clientEs62["default"];
+    return contact instanceof _clientEs62["default"];
   });
 }
 
@@ -1874,4 +1874,4 @@ describe("Given clientRetriever", function () {
   });
 });
 
-},{"../app/clientRetriever.es6":3}]},{},[8,9,10]);
+},{"../app/clientRetriever.es6":3}]},{},[10,8,9]);

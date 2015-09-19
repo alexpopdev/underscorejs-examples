@@ -85,7 +85,7 @@ function getContacts() {
 function getClients() {
   var contacts = getContacts();
   return _underscore2["default"].filter(contacts, function (contact) {
-    return contact.constructor === _clientEs62["default"];
+    return contact instanceof _clientEs62["default"];
   });
 }
 
