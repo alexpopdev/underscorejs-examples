@@ -12,7 +12,7 @@ gulp.task('build-app', function() {
 gulp.task('build-tests', function() {
   gulp.src([appScripts, '!app/index.js'])
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('./tests/public/'));
+    .pipe(gulp.dest('./spec/public/'));
 });
 
 gulp.task('open-app', ['build-app'], function() {
