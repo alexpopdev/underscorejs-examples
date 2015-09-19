@@ -62,7 +62,7 @@ exports.getContacts = getContacts;
 exports.getClients = function() {
   var contacts = getContacts();
   return _.filter(contacts, function(contact) {
-    return contact.constructor === Client;
+    return contact instanceof Client;
   });
 };
 exports.getOldestClients = function(count) {
@@ -71,7 +71,6 @@ exports.getOldestClients = function(count) {
 exports.getBestClients = function(count) {
   return _.first(_.sortBy(this.getClients(), 'bikePoints'), count);
 };
-
 },{"./client.js":1,"./contact.js":3,"./dataProvider.js":4,"underscore":9}],3:[function(require,module,exports){
 var _ = require("underscore");
 var validations = require("./validations.js");

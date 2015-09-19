@@ -36,7 +36,7 @@ exports.getContacts = getContacts;
 exports.getClients = function() {
   var contacts = getContacts();
   return _.filter(contacts, function(contact) {
-    return contact.constructor === Client;
+    return contact instanceof Client;
   });
 };
 exports.getOldestClients = function(count) {
