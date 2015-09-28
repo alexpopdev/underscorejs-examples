@@ -33,15 +33,18 @@ The examples are organised in these sections (that match a specific chapter of t
 5. Aggregations examples using _.min() and _.max() - [code](collections/aggregations)
 6. Transformations examples using _.sortBy(), _.groupBy(), _.indexBy(), _.countBy - [code](collections/transformations)
 
-### [Arrays, functions and objects](arrays%2C%20objects%20and%20functions) (Chapter3: Using Underscore.js with arrays, functions and objects)
+### [Arrays, functions and objects](arrays-objects-functions) (Chapter3: Using Underscore.js with arrays, functions and objects)
 1. Arrays examples using _.first(), _.rest(), _.last(), _.initial(), _.union(),  _.uniq(), _.intersection(), _.difference(), _.zip() - [code](arrays-objects-functions/arrays)
 2. Objects examples using _.keys(), _.pairs(), _.functions(), _.pick(), _.omit() - [code](arrays-objects-functions/objects)
 3. Object assertions using _.isX() functions like. _.isNumber(), _isNull() and others - [code](arrays-objects-functions/objects-assertions)
 4. Functions example using _.bind() - [preview](http://bit.ly/1NekLkz)
 5. Functions examples using _.partial(), _.wrap() - [code](arrays-objects-functions/functions)
 
-### OOP, FP and an utility sample (Chapter 4: Programming paradigms with Underscore.js)
-1. ???
+### [OOP and FP paradigms](programming-paradigms) (Chapter 4: Programming paradigms with Underscore.js)
+1. Object inheritance examples with ECMAScript 5 - [code](programming-paradigms/oop-inheritance)
+2. Classes and validation examples with Underscore - [code](programming-paradigms/oop-underscore)
+3. Adopting a functional programming(FP) style - [code](programming-paradigms/fp)
+4. FP examples using _.chain(), value(), _.tap() - [code](programming-paradigms/fp-underscore)
 
 ### Browser, server side and database examples (Chapter 5: Underscore.js in the browser, on the server and with the database)
 1. ???
