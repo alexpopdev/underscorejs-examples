@@ -53,5 +53,8 @@ The examples are organised in these sections (that match a specific chapter of t
 4. Examples for using Underscore with MongoDB - [code](browser-server-database/mongodb-underscore)
 5. Examples for using Underscore with PostgreSQL - [code](browser-server-database/postgresql-underscore)
 
-### Advanced topics (Chapter 6: Advanced Underscore.js topics)
-1. ???
+### [Advanced topics part 1](advanced-topics-1) (Chapter 6: Related Underscore.js libraries and ECMAScript standards)
+1. Underscore-contrib examples - [code]()
+2. lodash examples - [code]()
+3. ES5/ES6 and Underscore - [code]()
+4. Using ES6 with  - [code]()
