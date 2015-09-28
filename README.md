@@ -46,8 +46,12 @@ The examples are organised in these sections (that match a specific chapter of t
 3. Adopting a functional programming(FP) style - [code](programming-paradigms/fp)
 4. FP examples using _.chain(), value(), _.tap() - [code](programming-paradigms/fp-underscore)
 
-### Browser, server side and database examples (Chapter 5: Underscore.js in the browser, on the server and with the database)
-1. ???
+### [Browser, Node.js and database examples](browser-server-database) (Chapter 5: Using Underscore.js in the browser, on the server, and with the database)
+1. Browser examples using _.template() with different styles of templates - [code](browser-server-database/browser-underscore)
+2. Examples of Node.js modules - [code](browser-server-database/nodejs-modules)
+3. Examples of JavaScript code converted to Node.js modules and tests for Node.js modules - [code](browser-server-database/nodejs-underscore)
+4. Examples for using Underscore with MongoDB - [code](browser-server-database/mongodb-underscore)
+5. Examples for using Underscore with PostgreSQL - [code](browser-server-database/postgresql-underscore)
 
 ### Advanced topics (Chapter 6: Advanced Underscore.js topics)
 1. ???
