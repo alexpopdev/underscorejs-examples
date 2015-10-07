@@ -63,5 +63,5 @@ The examples are organised in these sections (that match a specific chapter of t
 
 ### [Advanced topics part 2](advanced-topics-2) (Chapter 7: Underscore.js build automation and code reusability)
 1. Using Gulp.js to automate the preview and test of an existing example  - [code](advanced-topics-2/gulp-automation)
-2. Using Browserify to enable CommonJS modules that are reusable between client and serverfor an existing example - [code](advanced-topics-2/gulp-browserify)
+2. Using Browserify to enable CommonJS modules that are reusable between client and server for an existing example - [code](advanced-topics-2/gulp-browserify)
 3. Using Browserify and Babel to enable ES6 modules that are reusable between client and server for an existing example - [code](advanced-topics-2/gulp-browserify-es6)
