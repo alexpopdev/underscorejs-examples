@@ -60,3 +60,8 @@ The examples are organised in these sections (that match a specific chapter of t
 4. Using ES6 with Babel CLI in browsers  - [code](advanced-topics-1/babel-client-cli)
 5. Using ES6 with Babel CLI in Node.js  - [code](advanced-topics-1/babel-server)
 6. Starter ES6 examples with ES6 tests (in a project using Babel CLI for code execution and jasmine-es6 for testing) - [code](advanced-topics-1/es6-examples)
+
+### [Advanced topics part 2](advanced-topics-2) (Chapter 7: Underscore.js build automation and code reusability)
+1. Using Gulp.js to automate the preview and test of an existing example  - [code](advanced-topics-2/gulp-automation)
+2. Using Browserify to enable CommonJS modules that are reusable between client and serverfor an existing example - [code](advanced-topics-2/gulp-browserify)
+3. Using Browserify and Babel to enable ES6 modules that are reusable between client and server for an existing example - [code](advanced-topics-2/gulp-browserify-es6)
