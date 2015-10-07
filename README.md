@@ -54,7 +54,9 @@ The examples are organised in these sections (that match a specific chapter of t
 5. Examples for using Underscore with PostgreSQL - [code](browser-server-database/postgresql-underscore)
 
 ### [Advanced topics part 1](advanced-topics-1) (Chapter 6: Related Underscore.js libraries and ECMAScript standards)
-1. Underscore-contrib examples - [code]()
-2. lodash examples - [code]()
-3. ES5/ES6 and Underscore - [code]()
-4. Using ES6 with  - [code]()
+1. Underscore-contrib examples - [code](advanced-topics-1/underscore-contrib)
+2. lodash examples - [code](advanced-topics-1/lodash-migration)
+3. Using ES6 with Babel directly in browsers - [code](advanced-topics-1/babel-client)
+4. Using ES6 with Babel CLI in browsers  - [code](advanced-topics-1/babel-client-cli)
+5. Using ES6 with Babel CLI in Node.js  - [code](advanced-topics-1/babel-server)
+6. Starter ES6 examples with ES6 tests (in a project using Babel CLI for code execution and jasmine-es6 for testing) - [code](advanced-topics-1/es6-examples)
