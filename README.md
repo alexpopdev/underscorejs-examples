@@ -1,10 +1,10 @@
 underscorejs-examples
 =================
 ##NOTE
-All the book examples are completed in a draft form and they will change during the final revisions. Currently the npm and bower packages are commited to source control but after the book is released there will be a branch available that does not contain these packages.
+Currently the npm and bower packages are commited to source control but I plan to make a branch available that does not contain these packages.
 
 ##Overview
-This repository contains the examples for my upcoming book "[Learning Underscore.js](http://bit.ly/1JwvBOO)".  
+This repository contains the examples for my book "[Learning Underscore.js](http://bit.ly/1JwvBOO)".  
 
 The folders and examples are named in such a way they can be explored outside of the book context.
 
